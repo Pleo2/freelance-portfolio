@@ -59,6 +59,7 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color: #000000;
 }
+
 .dark {
     ::-webkit-scrollbar-track {
         border: none;
@@ -71,4 +72,15 @@ body {
     ::-webkit-scrollbar-thumb {
         background-color: white;
     }
+}
+
+/* Reemplazo de @apply con CSS plain Modal menu */
+#toggleMenu.open span:first-child {
+    transform: rotate(-45deg);
+}
+#toggleMenu.open span:nth-child(2) {
+    opacity: 0;
+}
+#toggleMenu.open span:last-child {
+    transform: rotate(45deg);
 }

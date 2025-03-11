@@ -1,0 +1,119 @@
+---
+const navLinks = [
+    { name: "Inicio", href: "#home" },
+    { name: "Habilidades", href: "#skills" },
+    { name: "Proyectos", href: "#portfolio" },
+    { name: "Metodología", href: "#methodology" },
+    { name: "Testimonios", href: "#testimonials" },
+    { name: "Contacto", href: "#contact" }
+];
+---
+
+<header
+    id="header-mobile"
+    class="fixed top-0 left-0 py-6 max-w-dvw max-h-dvh w-dvw h-dvh z-50 transition-all duration-500"
+>
+    <div class="container px-4 mx-auto flex items-center justify-between">
+        <a
+            id="branding"
+            href="#home"
+            class="font-heading font-display font-bold text-2xl tracking-tight text-gradient transition-opacity duration-500"
+        >
+            JM
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav class="hidden md:flex items-center space-x-8">
+            {
+                navLinks.map((link) => (
+                    <Fragment key={link.name}>
+                        <a
+                            href={link.href}
+                            class="text-md font-medium text-foreground/80 hover:text-white link-underline hover:underline hover:decoration-wavy hover:decoration-foreground duration-300 transition-all"
+                        >
+                            {link.name}
+                        </a>
+                    </Fragment>
+                ))
+            }
+            <a
+                href="#contact"
+                class="px-4 py-2 rounded-md border text-foreground border-foreground hover:opacity-90 hover:border-foreground/80 transition-0 font-medium shadow-glow-sm hover:shadow-glow-md"
+            >
+                Hablemos
+            </a>
+        </nav>
+
+        {/* Mobile Hamburger Button con transición */}
+        <button
+            id="toggleMenu"
+            class="toggle-menu md:hidden flex flex-col gap-[0.3rem] bg-transparent border-0 focus:outline-none z-50"
+        >
+            <span
+                class="block w-5 h-0.5 bg-foreground rounded-full transition-transform origin-right duration-300 ease-in-out"
+            ></span>
+            <span
+                class="block w-5 h-0.5 bg-foreground rounded-full transition-opacity duration-300 ease-in-out"
+            ></span>
+            <span
+                class="block w-5 h-0.5 bg-foreground rounded-full transition-transform origin-right duration-300 ease-in-out"
+            ></span>
+        </button>
+    </div>
+
+    {
+
+            /* Mobile Navigation Modal (oculto por defecto, sin botón de cierre separado) */
+            // this first hidden property es parte de la logica para que este oculta por defecto
+    }
+
+    <div
+        id="mobileModal"
+        class="hidden fixed inset-0 bg-dark-purple/95 backdrop-blur-lg z-40 flex flex-col justify-center items-center transition-all duration-300 md:hidden"
+    >
+        <nav class="flex flex-col items-start space-y-6">
+            {
+                navLinks.map((link) => (
+                    <Fragment key={link.name}>
+                        <a
+                            href={link.href}
+                            class="text-5xl font-semibold text-foreground/90 hover:text-white transition-colors"
+                        >
+                            {link.name}
+                        </a>
+                    </Fragment>
+                ))
+            }
+        </nav>
+    </div>
+</header>
+
+<script is:inline>
+    // Función genérica para alternar el modal, añadiendo o removiendo la clase "open" al botón
+    document.addEventListener("DOMContentLoaded", () => {
+        const mobileModal = document.getElementById("mobileModal");
+        const toggleBtn = document.getElementById("toggleMenu");
+        const branding = document.getElementById("branding");
+
+        function toggleModal() {
+            if (document.startViewTransition) {
+                document.startViewTransition(() => {
+                    mobileModal.classList.toggle("hidden");
+                });
+            } else {
+                mobileModal.classList.toggle("hidden");
+            }
+            toggleBtn.classList.toggle("open");
+        }
+
+        toggleBtn.addEventListener("click", toggleModal);
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 10) {
+                branding.classList.add("opacity-0");
+            } else {
+                branding.classList.remove("opacity-0");
+            }
+        });
+    });
+</script>

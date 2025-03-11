@@ -1,20 +1,25 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import Header from '@/components/Header.astro';
-import Habilities from '@/components/Habilities.astro';
-import Project from '@/components/Project.astro';
-import Methodology from '@/components/Methodology.astro';
-import Results from '@/components/Results.astro';
-import Contact from '@/components/Contact.astro';
-import Footer from '@/components/Footer.astro';
+import Layout from "@/layouts/Layout.astro";
+import Habilities from "@/components/Habilities.astro";
+import Project from "@/components/Project.astro";
+import Methodology from "@/components/Methodology.astro";
+import Results from "@/components/Results.astro";
+import Contact from "@/components/Contact.astro";
+import Footer from "@/components/Footer.astro";
+import Container from "@/components/Container.astro";
+import Hero from "@/components/Hero.astro";
+import ThemeSelector from "@/components/ThemeSelector.astro";
 ---
 
 <Layout>
-    <Header />
-    <Habilities/>
-    <Project/>
-    <Methodology/>
-    <Results />
-    <Contact/>
-    <Footer />
+    <Container>
+        <Hero />
+        <Habilities />
+        <Project />
+        <Methodology />
+        <Results />
+        <Contact />
+        <Footer />
+        <ThemeSelector />
+    </Container>
 </Layout>

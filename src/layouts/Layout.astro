@@ -4,6 +4,10 @@ import "@fontsource-variable/inter-tight";
 import "@fontsource-variable/montserrat";
 import "@fontsource/space-mono/400.css";
 import "@fontsource/space-mono/700.css";
+
+import LinearWrapper from "@/components/primitives/LinearWrapper.astro";
+import ThemeSelector from "@/components/ThemeSelector.astro";
+import NavBar from "@/components/navigation/Navbar.astro";
 ---
 
 <!doctype html>
@@ -38,29 +42,10 @@ import "@fontsource/space-mono/700.css";
         </script>
     </head>
     <body class="dark:bg-stone-950">
-        <div class="theme-selector">
-            <label for="theme">Theme:</label>
-            <select id="theme" onchange="changeTheme(this.value)">
-                <option value="system">System</option>
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-            </select>
-        </div>
-        <script is:inline>
-            function changeTheme(theme) {
-                if (theme === "system") {
-                    localStorage.removeItem("theme");
-                } else {
-                    localStorage.theme = theme;
-                }
-                handleThemeChange();
-            }
-
-            // Set the select value based on the current theme
-            document.getElementById("theme").value =
-                localStorage.theme || "system";
-        </script>
+        <NavBar />
+        <LinearWrapper />
         <slot />
+
         <style is:global>
             /* Improve Page speed */
             /* https://css-tricks.com/almanac/properties/c/content-visibility/ */

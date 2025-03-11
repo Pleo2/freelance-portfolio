@@ -1,0 +1,22 @@
+<div class="z-50 absolute">
+    <label for="theme">Theme:</label>
+    <select class="bg-background" id="theme" onchange="changeTheme(this.value)">
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+</div>
+
+<script is:inline>
+    function changeTheme(theme) {
+        if (theme === "system") {
+            localStorage.removeItem("theme");
+        } else {
+            localStorage.theme = theme;
+        }
+        handleThemeChange();
+    }
+
+    // Set the select value based on the current theme
+    document.getElementById("theme").value = localStorage.theme || "system";
+</script>
