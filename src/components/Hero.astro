@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 // import Cobe from "@components/cobe.astro";
 // import Link from "@components/ui/link.astro";
 import abstractDottedGlobeIllustration from "@/assets/abstract-dotted-globe-illustration.png";
+import Navbar from "./navigation/Navbar.astro";
 // import { t } from "i18next";
 
 const { dynamic = false } = Astro.props;
@@ -10,8 +11,9 @@ const { dynamic = false } = Astro.props;
 ---
 
 <div
-    class="relative isolate dark:bg-stone-950 overflow-hidden lg:overflow-visible"
+class="relative isolate h-dvh dark:bg-stone-950 overflow-hidden lg:overflow-visible md:mt-0 md:justify-center md:flex md:flex-col md:gap-12 md:h-screen"
 >
+    <Navbar />
     <section
         class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
     >
@@ -40,9 +42,11 @@ const { dynamic = false } = Astro.props;
             </defs>
         </svg>
     </section>
-    <main class="mx-4">
+    <main
+        class="mt-24 flex flex-col justify-between items-center gap-4 px-4 md:flex-row md:gap-0 2xl:mt-24 "
+    >
         <section
-            class="text flex-1 flex flex-col gap-1 items-start justify-center h-[100dvh]"
+            class="text flex-2 flex flex-col gap-1 items-start justify-center"
         >
             <h3
                 class="inline-block font-mono font-medium text-xs w-max px-2 py-1 bg-white/5 backdrop-blur-md border border-foreground/10 rounded-full animate-fade-in"
@@ -69,11 +73,10 @@ const { dynamic = false } = Astro.props;
                 </span>
             </h2>
             <button
-                class="flex gap-1 px-6 py-2.5 text-xl font-semibold bg-foreground text-background rounded-xl items-center justify-center"
+                class="flex gap-1 px-6 py-2.5 mt-4 text-xl font-semibold bg-foreground text-background rounded-xl items-center justify-center"
                 >Contactanos
                 <span class="w-6 h-6"
                     ><svg
-                        xmlns="http://www.w3.org/2000/svg"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -89,7 +92,17 @@ const { dynamic = false } = Astro.props;
                 >
             </button>
         </section>
-
+        <section class="overflow-hidden flex-1 w-full mx-auto -bottom-[0px]">
+            <div
+                class="from-blue-500 to-blue-200 h-80 w-80 aspect-ratio rounded-full mx-auto"
+            >
+                <img
+                    src="https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="bg-image"
+                    class="w-full h-full bg-cover rounded-full"
+                />
+            </div>
+        </section>
         <section
             class="overflow-hidden opacity-20 blur-2xl flex-1 w-full mx-auto absolute -bottom-[0px]"
         >
@@ -144,6 +157,24 @@ const { dynamic = false } = Astro.props;
             </defs>
         </svg>
     </section>
+    <div>
+        <span class="w-full justify-center items-center animate-bounce hidden md:flex">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-mouse"
+                ><rect x="5" y="2" width="14" height="20" rx="7"></rect><path
+                    d="M12 6v4"></path></svg
+            >
+        </span>
+    </div>
 </div>
 
 <style>

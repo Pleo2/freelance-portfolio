@@ -14,6 +14,12 @@
 
     --color-background: #fff;
     --color-foreground: #000;
+
+    --color-pomp-and-power: hsla(274, 21%, 46%, 1);
+    --color-pale-dogwood: hsla(358, 39%, 85%, 1);
+    --color-eggplant: hsla(323, 20%, 40%, 1);
+    --color-desert-sand: hsla(27, 57%, 76%, 1);
+    --color-caput-mortuum: hsla(358, 28%, 26%, 1);
 }
 
 body {

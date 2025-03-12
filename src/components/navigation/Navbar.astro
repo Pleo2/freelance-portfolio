@@ -11,13 +11,13 @@ const navLinks = [
 
 <header
     id="header-mobile"
-    class="fixed top-0 left-0 py-6 max-w-dvw max-h-dvh w-dvw h-dvh z-50 transition-all duration-500"
+    class="fixed top-0 left-0 py-6 px-4 w-full h-dvh z-50 transition-all duration-500 md:left-1/2 md:transform md:-translate-x-1/2 md:max-w-[90rem]"
 >
-    <div class="container px-4 mx-auto flex items-center justify-between">
+    <div class="container flex items-center justify-between">
         <a
             id="branding"
             href="#home"
-            class="font-heading font-display font-bold text-2xl tracking-tight text-gradient transition-opacity duration-500"
+            class="font-heading font-display font-medium text-2xl tracking-tight text-gradient transition-opacity duration-500"
         >
             JM
         </a>
@@ -29,7 +29,7 @@ const navLinks = [
                     <Fragment key={link.name}>
                         <a
                             href={link.href}
-                            class="text-md font-medium text-foreground/80 hover:text-white link-underline hover:underline hover:decoration-wavy hover:decoration-foreground duration-300 transition-all"
+                            class="text-md font-medium text-foreground/80 hover:text-foreground link-underline hover:underline hover:decoration-wavy hover:decoration-foreground duration-300 transition-all"
                         >
                             {link.name}
                         </a>
