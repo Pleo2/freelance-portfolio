@@ -1,0 +1,19 @@
+---
+export interface Props {
+    content: {
+        icon: string;
+        description: string;
+    };
+}
+
+const { content } = Astro.props;
+---
+
+<article class="habilities-card">
+    <svg class="lucide-icon">
+        <use href="#menu"></use>
+    </svg>
+    <h2>
+        {content.description}
+    </h2>
+</article>
