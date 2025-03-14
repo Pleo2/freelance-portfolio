@@ -1,42 +1,54 @@
 ---
 import CardHabilities from "./habilities/cardHabilities.astro";
 
-const mainText = "Especializado en aplicaciones escalables, rendimiento web y código limpio. Optimizo para motores de búsqueda sin sacrificar el diseño.";
+const mainText =
+    "Especializado en aplicaciones escalables rendimiento web y código limpio.";
+const mainText2 =
+    "Optimización para motores de búsqueda desde el código, mejorando la visibilidad orgánica de tu web.";
 const content = [
     {
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-json-2"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M4 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1"/><path d="M8 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1"/></svg>`,
-        description: "Implementación de interfaces modernas y responsivas con las mejores prácticas del desarrollo web."
+        icon: "icon-command",
+        description:
+            "Implementación de interfaces modernas y responsivas con las mejores prácticas del desarrollo web."
     },
     {
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search-check"><path d="m8 11 2 2 4-4"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
-        description: "Optimización para motores de búsqueda desde el código, mejorando la visibilidad orgánica de tu web."
+        icon: "icon-scan-search",
+        description:
+            "Optimización para motores de búsqueda desde el código, mejorando la visibilidad orgánica de tu web."
     },
     {
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shapes"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg>`,
-        description: "Interfaces centradas en el usuario con diseños innovadores que destacan en el mercado."
+        icon: "icon-drafting-compass",
+        description:
+            "Interfaces centradas en el usuario con diseños innovadores que destacan en el mercado."
     },
     {
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pyramid"><path d="M2.5 16.88a1 1 0 0 1-.32-1.43l9-13.02a1 1 0 0 1 1.64 0l9 13.01a1 1 0 0 1-.32 1.44l-8.51 4.86a2 2 0 0 1-1.98 0Z"/><path d="M12 2v20"/></svg>`,
-        description: "Sitios web de carga rápida y experiencia fluida, optimizados para dispositivos móviles."
+        icon: "icon-zap",
+        description:
+            "Sitios web de carga rápida y experiencia fluida, optimizados para dispositivos móviles."
     },
     {
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"/><path d="m7 16.5-4.74-2.85"/><path d="m7 16.5 5-3"/><path d="M7 16.5v5.17"/><path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"/><path d="m17 16.5-5-3"/><path d="m17 16.5 4.74-2.85"/><path d="M17 16.5v5.17"/><path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"/><path d="M12 8 7.26 5.15"/><path d="m12 8 4.74-2.85"/><path d="M12 13.5V8"/></svg>`,
-        description: "Arquitecturas modernas para sitios web rápidos, seguros y escalables."
+        icon: "icon-boxes",
+        description:
+            "Arquitecturas modernas para sitios web rápidos, seguros y escalables."
     },
     {
-        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-webhook"><path d="M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2"/><path d="m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06"/><path d="m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8"/></svg>`,
-        description: "Integración efectiva entre frontend y APIs, con gestión optimizada de estados."
+        icon: "icon-cable",
+        description:
+            "Integración efectiva entre frontend y APIs, con gestión optimizada de estados."
     }
 ];
 ---
 
-<article class="habilities-component h-dvh md:h-screen bg-pomp-and-power">
-    <h2>{mainText}</h2>
-    <section class="cardContainer">
+<article class="habilities-component h-max md:h-screen mx-4 pt-32">
+    <h2
+        class="text-left text-foreground text-3xl font-sans font-semibold lg:max-w-[64%] md:text-4xl md:leading-[2.5rem]"
+    >
+        {mainText}
+        <span class="text-neutral-400">{mainText2}</span>
+    </h2>
+    <section class="cardContainer md:grid md:grid-cols-3 md:grid-rows-3 md:gap-24">
         {
-            content.map((item) => (
-                <CardHabilities content={item}/>
-            ))
+            content.map((item) => <CardHabilities content={item} />)
         }
     </section>
 </article>
