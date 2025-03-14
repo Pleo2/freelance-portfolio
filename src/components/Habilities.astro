@@ -46,9 +46,9 @@ const content = [
         {mainText}
         <span class="text-neutral-400">{mainText2}</span>
     </h2>
-    <section class="cardContainer md:grid md:grid-cols-3 md:grid-rows-3 md:gap-24">
-        {
-            content.map((item) => <CardHabilities content={item} />)
-        }
+    <section
+        class="cardContainer md:grid md:grid-cols-3 md:grid-rows-3 md:gap-24"
+    >
+        {content.map((item) => <CardHabilities content={item} />)}
     </section>
 </article>

@@ -100,3 +100,60 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
+/**
+ * ----------------------------------------
+ * animation background hero
+ * ----------------------------------------
+ */
+@keyframes slide {
+    0% {
+        left: calc(50% - 70rem);
+        transform: rotate(0deg);
+        scale:1;
+    }
+    50% {
+        left: calc(50% - 30rem);
+        transform: rotate(-180deg);
+        scale: 1.5;
+    }
+    100% {
+        left: calc(50% - 70rem);
+        transform: rotate(0deg);
+        scale: 1;
+    }
+}
+
+.animate-slide {
+    animation: slide 30s infinite;
+}
+
+
+/**
+ * ----------------------------------------
+ * animation blink-2
+ * ----------------------------------------
+ */
+ @-webkit-keyframes blink-2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes blink-2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
