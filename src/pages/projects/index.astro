@@ -1,0 +1,152 @@
+    ---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/Container.astro";
+import Navbar from "@/components/navigation/Navbar.astro";
+import { Icon } from "astro-icon/components";
+import Button from "@/components/primitives/Button.astro";
+import Link from "@/components/primitives/Link.astro";
+
+// Datos de proyectos (esto podría moverse a un archivo separado o CMS)
+const projects = [
+    {
+        id: 1,
+        title: "Sitio web e-commerce",
+        slug: "ecommerce-website",
+        tags: ["Diseño Web", "Desarrollo", "E-commerce"],
+        client: "Tienda Moderna",
+        description: "Diseño y desarrollo de un sitio web e-commerce completo con integración de pagos, gestión de inventario y panel de administración personalizado.",
+        fullDescription: "Desarrollo de una plataforma e-commerce moderna con funcionalidades avanzadas de búsqueda, filtrado de productos, carrito de compras optimizado y múltiples opciones de pago. El sitio incluye un panel administrativo completo para gestión de productos, pedidos y clientes.",
+        image: {
+            url: "https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            alt: "Plataforma e-commerce responsive con interfaz de usuario moderna"
+        }
+    },
+    {
+        id: 2,
+        title: "Aplicación web de gestión",
+        slug: "app-gestion",
+        tags: ["Aplicación Web", "Dashboard", "SaaS"],
+        client: "Empresa Gestión S.A.",
+        description: "Desarrollo de una aplicación web para gestión empresarial con múltiples módulos para diferentes departamentos y niveles de acceso.",
+        fullDescription: "Creación de una aplicación web completa para la gestión interna de una empresa. Incluye módulos para recursos humanos, finanzas, proyectos y clientes. Sistema de roles y permisos avanzado con analíticas en tiempo real y generación de informes personalizados.",
+        image: {
+            url: "https://images.pexels.com/photos/1242338/pexels-photo-1242338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            alt: "Dashboard de gestión empresarial con gráficos interactivos"
+        }
+    },
+    {
+        id: 3,
+        title: "Rediseño sitio corporativo",
+        slug: "rediseno-corporativo",
+        tags: ["Diseño UX/UI", "Desarrollo Web", "SEO"],
+        client: "Corporación Innovadora",
+        description: "Rediseño completo del sitio web corporativo con enfoque en mejorar la experiencia de usuario y optimización para motores de búsqueda.",
+        fullDescription: "Rediseño completo de un sitio web corporativo obsoleto. El nuevo diseño se enfoca en mejorar la experiencia de usuario, facilitar la navegación y destacar los servicios clave de la empresa. Incluye optimización SEO completa que resultó en un aumento del 45% en tráfico orgánico.",
+        image: {
+            url: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            alt: "Sitio web corporativo moderno en diferentes dispositivos"
+        }
+    }
+];
+
+// Metadatos SEO para la página de proyectos
+const pageTitle = "Proyectos | Portfolio de Diseño y Desarrollo Web";
+const pageDescription = "Explora mi portfolio de proyectos de diseño y desarrollo web. Trabajo con las últimas tecnologías para crear sitios web rápidos, modernos y optimizados para SEO.";
+const pageKeywords = ["portfolio", "proyectos web", "diseño web", "desarrollo web", "casos de éxito", "trabajos freelance"];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  type="website"
+>
+    <Container>
+        <Navbar />
+
+        <main class="pt-36 pb-24 px-4 md:px-8">
+            <header class="mb-16">
+                <h1 class="text-4xl md:text-5xl font-display font-bold mb-6 text-foreground">
+                    Proyectos
+                </h1>
+                <p class="text-xl md:text-2xl font-sans text-foreground/80 max-w-3xl">
+                    Una selección de mis mejores trabajos en diseño y desarrollo web.
+                    Cada proyecto representa un desafío único resuelto con creatividad y tecnología.
+                </p>
+            </header>
+
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                {projects.map((project) => (
+                    <article class="project-card bg-foreground/5 rounded-2xl overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+                        <div class="project-image relative overflow-hidden h-60 md:h-72">
+                            <img
+                                src={project.image.url}
+                                alt={project.image.alt}
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex gap-2 flex-wrap mb-3">
+                                {project.tags.map((tag) => (
+                                    <span class="text-xs font-mono py-1 px-2 rounded-md bg-foreground/10">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                            <h2 class="text-xl md:text-2xl font-display font-bold mb-3 text-foreground">
+                                {project.title}
+                            </h2>
+                            <p class="text-sm text-foreground/70 mb-6 flex-grow">
+                                {project.description}
+                            </p>
+                            <div class="mt-auto">
+                                <Button
+                                    text="Ver proyecto"
+                                    icon="icon-arrow-up-right"
+                                    style="primary"
+                                    size="md"
+                                />
+                            </div>
+                        </div>
+                    </article>
+                ))}
+            </section>
+
+            <section class="mt-24 py-16 px-8 bg-foreground/5 rounded-2xl text-center">
+                <h2 class="text-3xl md:text-4xl font-display font-bold mb-6 text-foreground">
+                    ¿Tienes un proyecto en mente?
+                </h2>
+                <p class="text-xl font-sans text-foreground/80 max-w-2xl mx-auto mb-8">
+                    Estoy disponible para nuevos proyectos. Contáctame y conversemos sobre cómo puedo ayudarte
+                    a llevar tu idea al siguiente nivel.
+                </p>
+                <Link href="/contact">
+                    <Button
+                        text="Contactar"
+                        icon="icon-message-circle"
+                        style="primary"
+                        size="lg"
+                    />
+                </Link>
+            </section>
+        </main>
+    </Container>
+</Layout>
+
+<style>
+    /* Animaciones y efectos adicionales para mejorar UX */
+    .project-card {
+        transform: translateY(0);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Aseguramos que las imágenes tengan el mismo tamaño */
+    .project-image {
+        aspect-ratio: 16/9;
+    }
+</style>

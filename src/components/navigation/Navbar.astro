@@ -1,8 +1,11 @@
 ---
+import Button from "@/components/primitives/Button.astro";
+import Link from "@/components/primitives/Link.astro";
+
 const navLinks = [
-    { name: "Inicio", href: "#home" },
+    { name: "Inicio", href: "/" },
     { name: "Habilidades", href: "#skills" },
-    { name: "Proyectos", href: "#portfolio" },
+    { name: "Proyectos", href: "/projects" },
     { name: "Metodología", href: "#methodology" },
     { name: "Testimonios", href: "#testimonials" },
     { name: "Contacto", href: "#contact" }
@@ -13,14 +16,16 @@ const navLinks = [
     id="header-mobile"
     class="fixed top-0 left-0 py-6 max-w-[90rem] max-h-dvh w-dvw h-dvh z-50 transition-all duration-500 md:max-w-full md:backdrop-blur-lg md:h-max"
 >
-    <div class="container px-4 mx-auto flex items-center justify-between md:max-w-[90rem] ">
-        <a
+    <div
+        class="container px-4 mx-auto flex items-center justify-between md:max-w-[90rem]"
+    >
+        <Link
             id="branding"
-            href="#home"
+            href="/"
             class="font-heading font-display font-bold text-2xl md:text-4xl tracking-tight text-gradient transition-opacity duration-500"
         >
             JM
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav class="hidden md:flex items-center space-x-8">
@@ -36,12 +41,12 @@ const navLinks = [
                     </Fragment>
                 ))
             }
-            <a
-                href="#contact"
-                class="px-4 py-2 rounded-md border text-foreground border-foreground hover:opacity-90 hover:border-foreground/80 transition-0 font-sans text-xl shadow-glow-sm hover:shadow-glow-md"
-            >
-                Hablemos
-            </a>
+            <Button
+                href="#/contact"
+                style="primary"
+                text="Hablemos"
+                size="lg"
+            />
         </nav>
 
         {/* Mobile Hamburger Button con transición */}
@@ -61,15 +66,9 @@ const navLinks = [
         </button>
     </div>
 
-    {
-
-            /* Mobile Navigation Modal (oculto por defecto, sin botón de cierre separado) */
-            // this first hidden property es parte de la logica para que este oculta por defecto
-    }
-
     <div
         id="mobileModal"
-        class="hidden fixed inset-0 bg-dark-purple/95 backdrop-blur-lg z-40 flex flex-col justify-center items-center transition-all duration-300 md:hidden"
+        class="fixed inset-0 bg-stone-950/80 backdrop-blur-lg z-40 flex flex-col justify-center items-center transition-all duration-300 md:hidden opacity-0 pointer-events-none"
     >
         <nav class="flex flex-col items-start space-y-6">
             {
@@ -89,32 +88,51 @@ const navLinks = [
 </header>
 
 <script is:inline>
-    // Función genérica para alternar el modal, añadiendo o removiendo la clase "open" al botón
+    // Función para manejar el menú móvil sin usar view transitions
     document.addEventListener("DOMContentLoaded", () => {
         const mobileModal = document.getElementById("mobileModal");
         const toggleBtn = document.getElementById("toggleMenu");
-        const branding = document.getElementById("branding");
+        const header = document.getElementsByTagName("header")[0];
+
+        // Estado del menú
+        let menuOpen = false;
 
         function toggleModal() {
-            if (document.startViewTransition) {
-                document.startViewTransition(() => {
-                    mobileModal.classList.toggle("hidden");
-                });
+            menuOpen = !menuOpen;
+
+            if (menuOpen) {
+                // Abrir menú
+                mobileModal.style.opacity = "1";
+                mobileModal.style.pointerEvents = "auto";
+                document.body.style.overflow = "hidden"; // Prevenir scroll
             } else {
-                mobileModal.classList.toggle("hidden");
+                // Cerrar menú
+                mobileModal.style.opacity = "0";
+                mobileModal.style.pointerEvents = "none";
+                document.body.style.overflow = ""; // Restaurar scroll
             }
+
             toggleBtn.classList.toggle("open");
         }
 
+        // Evento para el botón hamburguesa
         toggleBtn.addEventListener("click", toggleModal);
 
+        // Cerrar el menú al hacer clic en un enlace
+        const mobileLinks = mobileModal.querySelectorAll("a");
+        mobileLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                if (menuOpen) toggleModal();
+            });
+        });
+
+        // Control de la visibilidad del header al hacer scroll
         window.addEventListener("scroll", () => {
             if (window.scrollY > 40) {
-                branding.classList.add("opacity-0");
+                header.classList.add("hidden");
             } else {
-                branding.classList.remove("opacity-0");
+                header.classList.remove("hidden");
             }
         });
     });
-
 </script>

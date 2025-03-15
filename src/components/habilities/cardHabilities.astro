@@ -10,7 +10,7 @@ const { content } = Astro.props;
 import { Icon } from "astro-icon/components";
 ---
 
-<article class="habilities-card mt-24">
+<article class="habilities-card mt-16 md:mt-24">
     <Icon name={`${content.icon}`} class="w-12 h-12" />
     <h2 class="text-xl lg:text-2xl mt-6">
         {content.description}

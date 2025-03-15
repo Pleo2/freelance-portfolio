@@ -80,26 +80,35 @@ body {
     }
 }
 
-/* Reemplazo de @apply con CSS plain Modal menu */
+/*
+**
+** Mobile menu
+animation and trasnsition
+**
+*/
+#toggleMenu span {
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
 #toggleMenu.open span:first-child {
     transform: rotate(-45deg);
 }
+
 #toggleMenu.open span:nth-child(2) {
     opacity: 0;
 }
+
 #toggleMenu.open span:last-child {
     transform: rotate(45deg);
 }
 
-.lucide-icon {
-    width: 24px;
-    height: 24px;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+/* Transición suave para el modal */
+#mobileModal {
+    transition: opacity 0.5s ease;
 }
+
 
 /**
  * ----------------------------------------
