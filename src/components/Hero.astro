@@ -3,8 +3,6 @@ import AnimatedBackground from "@/components/AnimatedBackground.astro";
 import AnimatedBackground2 from "@/components/AnimatedBackground2.astro";
 import Navbar from "@/components/navigation/Navbar.astro";
 import MouseBounce from "@/components/ui/mouseBounce.astro";
-import { Icon } from "astro-icon/components";
-import Button from "./primitives/Button.astro";
 const { dynamic = false } = Astro.props;
 ---
 
@@ -44,12 +42,25 @@ const { dynamic = false } = Astro.props;
                     Contactenos para obtener una consulta gratuita.
                 </span>
             </h2>
-            <Button
-                text="Contactanos"
-                icon="icon-arrow-up-right"
-                style="primary"
-                size="lg"
-            />
+            <button
+                class="flex gap-1 px-6 py-2.5 mt-4 text-xl font-semibold bg-foreground text-background rounded-xl items-center justify-center"
+                >Contactanos
+                <span class="w-6 h-6"
+                    ><svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-arrow-up-right"
+                        ><path d="M7 7h10v10"></path><path d="M7 17 17 7"
+                        ></path></svg
+                    ></span
+                >
+            </button>
         </section>
         <section class="overflow-hidden flex-1 w-full mx-auto -bottom-[0px]">
             <div

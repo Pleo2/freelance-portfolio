@@ -25,7 +25,7 @@ Un sitio web de portfolio profesional desarrollado con Astro 5.2, optimizado par
 ```bash
 npm install
 # o
-yarn install
+yarn
 # o
 pnpm install
 ```
