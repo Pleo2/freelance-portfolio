@@ -1,0 +1,10 @@
+---
+const { id, image, class: className } = Astro.props;
+---
+
+<!-- @ts-ignore -->
+<img
+    src={image.url}
+    alt={image.alt}
+    class={`w-full h-52 object-cover rounded-2xl mb-4 md:h-96 md:rounded-xl ${className}`}
+/>
