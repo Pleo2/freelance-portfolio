@@ -1,69 +1,32 @@
 ---
 import ProjectsTitle from "@/components/projects/ProjectsTitle.astro";
 import Button from "@/components/primitives/Button.astro";
-const projects = [
-    {
-        id: 1,
-        title: "Proyecto 1",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-        image: {
-            url: "https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            alt: "Imagen del proyecto 1"
-        }
-    },
-    {
-        id: 2,
-        title: "Proyecto 2",
-        description:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor vestibulum magna sed, convallis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-        image: {
-            url: "https://images.pexels.com/photos/1242338/pexels-photo-1242338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            alt: "Imagen del proyecto 2"
-        }
-    }
-];
+import { type Project, projects } from "@/assets/mocks/projects";
+import Link from "./primitives/Link.astro";
+import ProjectCard from "@/pages/projects/ProjectCard.astro";
+import ProjectContainer from "./projects/ProjectContainer.astro";
+import Divisor from "./ui/Divisor.astro";
 ---
 
 <article class="habilities-component h-max mx-4 pt-24">
-    <section
-        class="container border-[1px] border-foreground/20 rounded-lg p-4 bg-background"
-    >
+    <ProjectContainer>
         <ProjectsTitle />
+        <Divisor space="sm"/>
         <div
-            class="divisor mt-2 h-[1px] w-full bg-foreground/10 border-foreground/20"
-        >
-        </div>
-        <div
-            class="project-container grid grid-cols-1 md:grid-cols-2  gap-4 md:gap-12"
+            class="project-container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12"
         >
             {
-                projects.map((_) => (
-                    <div class="project-card mt-4">
-                        <img
-                            src={_.image.url}
-                            alt={_.image.alt}
-                            class="w-full h-52 object-cover rounded-2xl mb-4 md:h-96"
+                projects
+                    .slice(0, 2)
+                    .map((_: Project) => (
+                        <ProjectCard
+                            id={_.id}
+                            title={_.title}
+                            description={_.description}
+                            image={_.image}
                         />
-                        <div class="project-info-redirect flex justify-start  items-center gap-4 h-max ">
-                            <Button
-                                icon="icon-arrow-up-right"
-                                iconSize={24}
-                                style="primary"
-                                class="h-12 w-12 text-foreground/50 "
-                            />
-                            <div class="project-info flex-1 w-[80%] h-12">
-                                <h3 class="font-display font-thing text-foreground text-xl">
-                                    {_.title}
-                                </h3>
-                                <p class="font-sans truncate line-clamp-2 max-w-3/4 text-[0.7rem] text-foreground/50 ">
-                                    {_.description}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                ))
+                    ))
             }
         </div>
-    </section>
+    </ProjectContainer>
 </article>

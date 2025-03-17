@@ -1,0 +1,19 @@
+---
+interface Props {
+    class?: string;
+    space?: "xs" | "sm" | "md" | "lg";
+}
+
+const sizes = {
+    xs: "mt-2",
+    sm: "mt-4",
+    md: "mt-6",
+    lg: "mt-8"
+};
+
+const { class: className, space } = Astro.props;
+---
+
+<div
+    class={`divisor ${sizes[space]} h-[1px] w-full bg-foreground/10 border-foreground/20 ${className}`}
+/>

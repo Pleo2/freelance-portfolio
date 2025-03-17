@@ -1,0 +1,151 @@
+---
+import { type Project, projects } from "@/assets/mocks/projects";
+import Container from "@/components/Container.astro";
+import Button from "@/components/primitives/Button.astro";
+import Link from "@/components/primitives/Link.astro";
+import ProjectContainer from "@/components/projects/ProjectContainer.astro";
+import ProjectsTitle from "@/components/projects/ProjectsTitle.astro";
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    return projects.flatMap(
+        (
+            project,
+            index
+        ): { params: { id: number }; props: { project: Project } }[] => [
+            {
+                params: { id: project.id },
+                props: {
+                    project: project
+                }
+            }
+        ]
+    );
+}
+
+const { project } = Astro.props;
+---
+
+<Layout
+    title={project.title}
+    description={project.description}
+    keywords={project.tags}
+    type="website"
+>
+    <Container>
+        <div class="h-max mx-4 pt-6 pb-6 flex flex-col md:flex-row">
+            <ProjectContainer>
+
+
+                <div
+                    class="return-button section flex justify-between items-center"
+                >
+                    <h1 class="font-sans truncate mr-4">{project.title}</h1>
+                    <Link href="/projects">
+                        <Button
+                            text="ver todos los proyectos"
+                            icon="icon-arrow-up-right"
+                            style="button"
+                            size="xs"
+                        />
+                    </Link>
+                </div>
+                <div
+                    class="divisor mt-4 h-[1px] w-full bg-foreground/10 border-foreground/20"
+                >
+                </div>
+                <div
+                    class="text-section inset-shadow-2xs inset-shadow-foreground/20 bg-background/20 rounded-2xl border-foreground/20 mt-4 p-4 font-sans text-sm flex flex-col gap-2"
+                >
+                    <p>{project.fullDescription}</p>
+                    <div
+                        class="divisor mt-4 h-[1px] w-full bg-foreground/10 border-foreground/20"
+                    >
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="flex justify-between items-center">
+                            <p class="font-sans text-sm text-foreground/50">
+                                Cliente
+                            </p>
+                            <p class="font-sans text-sm text-foreground/50">
+                                {project.client}
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="font-sans text-sm text-foreground/50">
+                                Fecha
+                            </p>
+                            <p class="font-sans text-sm text-foreground/50">
+                                {project.date}
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="font-sans text-sm text-foreground/50">
+                                Tecnologías
+                            </p>
+                            <p class="font-sans text-sm text-foreground/50">
+                                {project.tags.join(", ")}
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <p class="font-sans text-sm text-foreground/50">
+                                Enlace
+                            </p>
+                            <Link
+                                href={project.link ?? "/"}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <p
+                                    class="font-sans text-sm text-foreground/50 flex items-center gap-1 md:hover:opacity-75"
+                                >
+                                    Ver en vivo <Button
+                                        class="opacity-50"
+                                        style="outline"
+                                        icon="icon-arrow-up-right"
+                                        iconSize={18}
+                                    />
+                                </p>
+                            </Link>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <p class="font-sans text-sm text-foreground/50">
+                                Fecha de publicación
+                            </p>
+                            <p class="font-sans text-sm text-foreground/50">
+                                {project.date}
+                            </p>
+                        </div>
+
+                        <div
+                            class="divisor mt-4 h-[1px] w-full bg-foreground/10 border-foreground/20"
+                        >
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="images-section grid grid-col-1 gap-4 mt-6 [&>img]:rounded-2xl"
+                >
+                    {/* @ts-ignore */}
+                    <img
+                        transition:name={`project-image-${project.id}`}
+                        src={project.image.url}
+                        alt={project.image.alt}
+                        class="w-full h-60 md:h-72 object-cover rounded-2xl"
+                    />
+                    {
+                        project.allImages.map((image) => (
+                            <img
+                                src={image.url}
+                                alt={image.alt}
+                                class="w-full h-60 md:h-72 object-cover bg-gray-50"
+                            />
+                        ))
+                    }
+                </div>
+            </div>
+            </ProjectContainer>
+        </div>
+    </Container>
+</Layout>

@@ -1,0 +1,37 @@
+---
+import Button from "../primitives/Button.astro";
+import Link from "../primitives/Link.astro";
+
+import { type Project } from "@/assets/mocks/projects";
+import { projects } from "@/assets/mocks/projects";
+
+const { id, title, description, image } = Astro.props;
+---
+
+<div class="project-card mt-4">
+    {/* @ts-ignore */}
+    <img
+        transition:name={`project-image-${_.id}`}
+        src={image.url}
+        alt={image.alt}
+        class="w-full h-52 object-cover rounded-2xl mb-4 md:h-96"
+    />
+    <div class="project-info-redirect flex justify-start  items-center gap-4 h-max ">
+        <Link href={`/projects/${id}`}>
+            <Button
+                icon="icon-arrow-up-right"
+                iconSize={16}
+                style="button"
+                class="h-12 w-12 text-foreground/50 "
+            />
+        </Link>
+        <div class="project-info flex-1 w-[80%] h-12">
+            <h3 class="font-display font-thing text-foreground text-xl">
+                {title}
+            </h3>
+            <p class="font-sans truncate line-clamp-2 max-w-3/4 text-[0.7rem] text-foreground/50 ">
+                {description}
+            </p>
+        </div>
+    </div>
+</div>
