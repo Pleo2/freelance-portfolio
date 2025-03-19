@@ -8,6 +8,7 @@ import Contact from "@/components/Contact.astro";
 import Footer from "@/components/Footer.astro";
 import Container from "@/components/Container.astro";
 import Hero from "@/components/Hero.astro";
+import CalltoactionSection from "@/components/CalltoactionSection.astro";
 
 // Metadatos SEO para la página principal
 const pageTitle = "Portfolio Freelance | Diseño y Desarrollo Web Profesional";
@@ -15,7 +16,7 @@ const pageDescription = "Servicios de diseño web y desarrollo web profesional. 
 const pageKeywords = ["diseño web", "desarrollo web", "freelance", "portfolio", "diseño responsive", "SEO", "UX/UI", "aplicaciones web", "sitios web rápidos"];
 ---
 
-<Layout 
+<Layout
   title={pageTitle}
   description={pageDescription}
   keywords={pageKeywords}
@@ -26,6 +27,7 @@ const pageKeywords = ["diseño web", "desarrollo web", "freelance", "portfolio",
         <Hero />
         <Habilities />
         <Project />
+        <CalltoactionSection/>
         <Methodology />
         <Results />
         <Contact />

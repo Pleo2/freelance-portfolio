@@ -3,8 +3,7 @@ import { type Project, projects } from "@/assets/mocks/projects";
 import Container from "@/components/Container.astro";
 import Button from "@/components/primitives/Button.astro";
 import Link from "@/components/primitives/Link.astro";
-import ProjectContainer from "@/components/projects/ProjectContainer.astro";
-import ProjectsTitle from "@/components/projects/ProjectsTitle.astro";
+import SectionContainer from "@/components/projects/SectionContainer.astro";
 import Divisor from "@/components/ui/Divisor.astro";
 import Layout from "@/layouts/Layout.astro";
 import Image from "@/components/projects/Image.astro";
@@ -41,7 +40,7 @@ const { project } = Astro.props;
             <AnimatedBackground position="left" />
     <AnimatedBackground position="right" verticalPosition="bottom" />
     <AnimatedBackground2 verticalPosition="middle" />
-            <ProjectContainer>
+            <SectionContainer>
                 <div
                     class="return-button section flex justify-between items-center"
                 >
@@ -133,7 +132,7 @@ const { project } = Astro.props;
                         }
                     </div>
                 </section>
-            </ProjectContainer>
+            </SectionContainer>
         </div>
     </Container>
 </Layout>

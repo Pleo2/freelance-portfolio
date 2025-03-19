@@ -6,10 +6,10 @@ import Link from "@/components/primitives/Link.astro";
 import { projects } from "@/assets/mocks/projects";
 import ProjectCard from "@/components/projects/ProjectCard.astro";
 import Divisor from "@/components/ui/Divisor.astro";
-import ProjectContainer from "@/components/projects/ProjectContainer.astro";
 import CallToAction from "@/components/contact/CallToAction.astro";
 import AnimatedBackground from "@/components/AnimatedBackground.astro";
 import AnimatedBackground2 from "@/components/AnimatedBackground2.astro";
+import SectionContainer from "@/components/projects/SectionContainer.astro";
 // Metadatos SEO para la página de proyectos
 
 const pageTitle = "Proyectos | Portfolio de Diseño y Desarrollo Web";
@@ -52,7 +52,7 @@ const pageKeywords = [
                     </Link>
                 </header>
                 <Divisor space="sm" />
-                <ProjectContainer class="md:grid md:grid-cols-2 md:gap-12">
+                <SectionContainer class="md:grid md:grid-cols-2 md:gap-12">
                     {
                         projects.map((project) => (
                             <ProjectCard
@@ -63,13 +63,13 @@ const pageKeywords = [
                             />
                         ))
                     }
-                </ProjectContainer>
+                </SectionContainer>
                 <Divisor space="sm" />
-                <ProjectContainer
+                <SectionContainer
                     class="md:grid md:grid-cols-1 place-items-center"
                 >
                     <CallToAction />
-                </ProjectContainer>
+                </SectionContainer>
             </div>
         </main>
     </Container>

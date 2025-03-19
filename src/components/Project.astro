@@ -1,16 +1,16 @@
 ---
-import ProjectsTitle from "@/components/projects/ProjectsTitle.astro";
 import Button from "@/components/primitives/Button.astro";
 import { type Project, projects } from "@/assets/mocks/projects";
 import Link from "./primitives/Link.astro";
 import ProjectCard from "@/components/projects/ProjectCard.astro";
-import ProjectContainer from "./projects/ProjectContainer.astro";
+import SectionContainer from "./projects/SectionContainer.astro";
 import Divisor from "./ui/Divisor.astro";
+import SectionTitle from "./ui/SectionTitle.astro";
 ---
 
 <article class="habilities-component h-max mx-4 pt-24">
-    <ProjectContainer>
-        <ProjectsTitle />
+    <SectionContainer>
+        <SectionTitle />
         <Divisor space="sm"/>
         <div
             class="project-container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12"
@@ -28,5 +28,5 @@ import Divisor from "./ui/Divisor.astro";
                     ))
             }
         </div>
-    </ProjectContainer>
+    </SectionContainer>
 </article>
