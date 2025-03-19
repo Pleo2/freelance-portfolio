@@ -1,3 +1,26 @@
-<article class="habilities-component h-dvh md:h-screen bg-eggplant">
+---
+import FaqSection from "./faq/FaqSection.astro";
 
+const faqItems = [
+  {
+    question: "¿Qué es Astro?",
+    answer: "Astro es un framework web moderno que permite construir sitios web más rápidos con menos JavaScript. Combina lo mejor de los frameworks estáticos y dinámicos."
+  },
+  {
+    question: "¿Por qué usar Tailwind CSS?",
+    answer: "Tailwind CSS es un framework de utilidades CSS que permite diseñar rápidamente interfaces personalizadas sin salir de tu HTML. Proporciona flexibilidad y mantenibilidad sin sacrificar la velocidad de desarrollo."
+  },
+  {
+    question: "¿Cómo funciona Alpine.js?",
+    answer: "Alpine.js es un framework JavaScript minimalista que te permite agregar comportamiento dinámico a tu HTML con una sintaxis declarativa simple. Es perfecto para interacciones pequeñas como menús desplegables y modales."
+  },
+  {
+    question: "¿Es responsive este diseño?",
+    answer: "Sí, este diseño es completamente responsive y se adapta a diferentes tamaños de pantalla gracias a las utilidades de Tailwind CSS."
+  }
+];
+---
+
+<article class="habilities-component h-dvh md:h-screen">
+    <FaqSection items={faqItems} />
 </article>

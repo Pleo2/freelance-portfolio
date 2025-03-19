@@ -1,9 +1,35 @@
+---
+interface Props {
+    horizontalPosition?: 'left' | 'right';
+    verticalPosition?: 'top' | 'middle' | 'bottom';
+    color1?: string;
+    color2?: string;
+}
+
+const { 
+    horizontalPosition = 'right',
+    verticalPosition = 'bottom',
+    color1 = 'var(--color-pomp-and-power)',
+    color2 = 'var(--color-desert-sand)'
+} = Astro.props;
+
+const verticalClass = {
+    top: 'top-0',
+    middle: 'top-1/2 -translate-y-1/2',
+    bottom: 'top-[calc(100%-13rem)] sm:top-[calc(100%-30rem)]'
+}[verticalPosition];
+
+const horizontalClass = {
+    left: 'left-[calc(50%-3rem)] sm:left-[calc(50%-36rem)]',
+    right: 'left-[calc(50%+3rem)] sm:left-[calc(50%+36rem)]'
+}[horizontalPosition];
+---
+
 <section
-    class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+    class={`absolute inset-x-0 ${verticalClass} -z-10 transform-gpu overflow-hidden blur-3xl`}
 >
     <svg
-        class="relative left-[calc(50%+3rem)] h-[21.1875rem] max-w-
-        ƒnone -translate-x-1/2 sm:left-[calc(50%+36rem)] sm:h-[42.375rem] animate-slide"
+        class={`relative ${horizontalClass} h-[21.1875rem] max-w-none -translate-x-1/2 sm:h-[42.375rem] animate-slide`}
         viewBox="0 0 1155 678"
     >
         <path
@@ -21,17 +47,17 @@
                 y2="474.645"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="var( --color-pomp-and-power)">
+                <stop stop-color={color1}>
                     <animate
                         attributeName="stop-color"
-                        values="var(--color-pomp-and-power); var(--color-caput-mortuum); var(--color-pomp-and-power)"
+                        values={`${color1}; ${color2}; ${color1}`}
                         dur="5s"
                         repeatCount="indefinite"></animate>
                 </stop>
-                <stop offset="1" stop-color="var(--color-desert-sand)">
+                <stop offset="1" stop-color={color2}>
                     <animate
                         attributeName="stop-color"
-                        values="var(--color-desert-sand); var(--color-pomp-and-power); var(--color-desert-sand)"
+                        values={`${color2}; ${color1}; ${color2}`}
                         dur="5s"
                         repeatCount="indefinite"></animate>
                 </stop>

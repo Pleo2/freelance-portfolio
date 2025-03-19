@@ -1,8 +1,31 @@
+---
+interface Props {
+    position?: 'left' | 'right';
+    verticalPosition?: 'top' | 'middle' | 'bottom';
+}
+
+const { position = 'left', verticalPosition = 'top' } = Astro.props;
+
+const verticalClasses = {
+    top: '-top-40 sm:-top-80',
+    middle: 'top-1/2 -translate-y-1/2',
+    bottom: 'bottom-0'
+};
+---
+
 <section
-        class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        class:list={[
+            "absolute inset-x-0 -z-10 transform-gpu overflow-hidden blur-3xl",
+            verticalClasses[verticalPosition]
+        ]}
     >
         <svg
-            class="relative left-[calc(50%-11rem)] -z-10 h-[21.1875rem] max-w-none -translate-x-1/4 rotate-[30deg] sm:left-[calc(50%-30rem)] sm:h-[42.375rem] animate-slide"
+            class:list={[
+                "relative -z-10 h-[21.1875rem] max-w-none rotate-[30deg] sm:h-[42.375rem] animate-slide",
+                position === 'left' 
+                    ? "left-[calc(50%-11rem)] -translate-x-1/4 sm:left-[calc(50%-30rem)]" 
+                    : "right-[calc(50%-11rem)] translate-x-1/4 sm:right-[calc(50%-30rem)]"
+            ]}
             viewBox="0 0 1155 678"
         >
             <path

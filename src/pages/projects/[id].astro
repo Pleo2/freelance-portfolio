@@ -8,6 +8,8 @@ import ProjectsTitle from "@/components/projects/ProjectsTitle.astro";
 import Divisor from "@/components/ui/Divisor.astro";
 import Layout from "@/layouts/Layout.astro";
 import Image from "@/components/projects/Image.astro";
+import AnimatedBackground from "@/components/AnimatedBackground.astro";
+import AnimatedBackground2 from "@/components/AnimatedBackground2.astro";
 
 export async function getStaticPaths() {
     return projects.flatMap(
@@ -36,11 +38,14 @@ const { project } = Astro.props;
 >
     <Container>
         <div class="h-max mx-4 pt-6 pb-6 flex flex-col md:flex-row">
+            <AnimatedBackground position="left" />
+    <AnimatedBackground position="right" verticalPosition="bottom" />
+    <AnimatedBackground2 verticalPosition="middle" />
             <ProjectContainer>
                 <div
                     class="return-button section flex justify-between items-center"
                 >
-                    <h1 class="font-sans truncate mr-4">{project.title}</h1>
+                    <h1 class="font-display font-thin truncate mr-4 lg:text-4xl">{project.title}</h1>
                     <Link href="/projects">
                         <Button
                             text="ver todos los proyectos"

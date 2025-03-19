@@ -1,11 +1,15 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Container from "@/components/Container.astro";
-import Navbar from "@/components/navigation/Navbar.astro";
 import Button from "@/components/primitives/Button.astro";
 import Link from "@/components/primitives/Link.astro";
 import { projects } from "@/assets/mocks/projects";
 import ProjectCard from "@/components/projects/ProjectCard.astro";
+import Divisor from "@/components/ui/Divisor.astro";
+import ProjectContainer from "@/components/projects/ProjectContainer.astro";
+import CallToAction from "@/components/contact/CallToAction.astro";
+import AnimatedBackground from "@/components/AnimatedBackground.astro";
+import AnimatedBackground2 from "@/components/AnimatedBackground2.astro";
 // Metadatos SEO para la página de proyectos
 
 const pageTitle = "Proyectos | Portfolio de Diseño y Desarrollo Web";
@@ -29,11 +33,14 @@ const pageKeywords = [
 >
     <Container>
         <main class="pt-6 pb-24 px-4 md:px-8">
+            <AnimatedBackground position="right" />
+            <AnimatedBackground position="left" />
+            <AnimatedBackground2 />
             <div
                 class="container-projects border-[1px] border-foreground/20 rounded-lg p-4"
             >
                 <header class="flex justify-between items-center">
-                    <h1 class="font-display font-thin text-xl">Proyectos</h1>
+                    <h1 class="font-display font-thin text-xl md:text-4xl">Proyectos</h1>
                     <Link href="/">
                         <Button
                             text="regresar al inicio"
@@ -44,66 +51,26 @@ const pageKeywords = [
                         />
                     </Link>
                 </header>
-                <div class="divisor mt-4 h-[1px] w-full"></div>
-                <section
-                    class="grid grid-cols-1 px-4 pb-2 bg-background rounded-2xl border-[1px] border-foreground/10 inset-shadow-2xs inset-shadow-foreground/20 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12"
-                >
+                <Divisor space="sm" />
+                <ProjectContainer class="md:grid md:grid-cols-2 md:gap-12">
                     {
                         projects.map((project) => (
-                            <ProjectCard id={project.id} title={project.title} description={project.description} image={project.image} />
+                            <ProjectCard
+                                id={project.id}
+                                title={project.title}
+                                description={project.description}
+                                image={project.image}
+                            />
                         ))
                     }
-                </section>
-
-                <div
-                    class="divisor mt-8 h-[1px] w-full bg-foreground/10 border-foreground/20"
+                </ProjectContainer>
+                <Divisor space="sm" />
+                <ProjectContainer
+                    class="md:grid md:grid-cols-1 place-items-center"
                 >
-                </div>
-
-                <section
-                    class="mt-8 py-16 px-8 bg-background rounded-2xl text-center inset-shadow-2xs inset-shadow-foreground/20"
-                >
-                    <h2
-                        class="text-2xl font-sans font-bold mb-6 text-foreground"
-                    >
-                        ¿Tienes un proyecto en mente?
-                    </h2>
-                    <p
-                        class="text-lg font-sans text-foreground/80 max-w-2xl mx-auto mb-8"
-                    >
-                        Estoy disponible para nuevos proyectos. Contáctame y
-                        conversemos sobre cómo puedo ayudarte a llevar tu idea
-                        al siguiente nivel.
-                    </p>
-                    <Link href="/contact">
-                        <Button
-                            text="Contactar"
-                            icon="icon-message-circle"
-                            style="primary"
-                            size="lg"
-                        />
-                    </Link>
-                </section>
+                    <CallToAction />
+                </ProjectContainer>
             </div>
         </main>
     </Container>
 </Layout>
-
-<style>
-    /* Animaciones y efectos adicionales para mejorar UX */
-    .project-card {
-        transform: translateY(0);
-        transition:
-            transform 0.3s ease,
-            box-shadow 0.3s ease;
-    }
-
-    .project-card:hover {
-        transform: translateY(-5px);
-    }
-
-    /* Aseguramos que las imágenes tengan el mismo tamaño */
-    .project-image {
-        aspect-ratio: 16/9;
-    }
-</style>
