@@ -1,11 +1,4 @@
 
-// =====================================================================
-/*
-** Astro config
-! Cuando actualices TypeScript o las definiciones de tipos de Astro, podrás eliminar esta anotación
-! @ts-nocheck - Desactivamos TypeScript para este archivo ya que viewTransitions es válido en Astro 5.2+
-*/
-// =====================================================================
 import vercel from "@astrojs/vercel"
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
