@@ -65,12 +65,7 @@ const { items } = Astro.props;
         });
     }
 
-    initializeFaq();
-
     document.addEventListener("astro:page-load", () => {
-        initializeFaq();
-    });
-    document.addEventListener("DOMContentLoaded", () => {
         initializeFaq();
     });
 </script>

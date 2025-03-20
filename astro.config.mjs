@@ -6,7 +6,7 @@
 ! @ts-nocheck - Desactivamos TypeScript para este archivo ya que viewTransitions es válido en Astro 5.2+
 */
 // =====================================================================
-
+import vercel from "@astrojs/vercel"
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
@@ -21,4 +21,7 @@ export default defineConfig({
   viewTransitions: true,
 
   integrations: [icon()],
+
+  output: 'server',
+  adapter: vercel(),
 });

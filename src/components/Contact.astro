@@ -4,6 +4,8 @@ import SectionContainer from "./projects/SectionContainer.astro";
 import SectionTitle from "./ui/SectionTitle.astro";
 import Divisor from "./ui/Divisor.astro";
 import Button from "./primitives/Button.astro";
+
+import { actions } from "astro:actions";
 ---
 
 <article class="contact-section h-max mx-4 pt-24">
@@ -13,7 +15,7 @@ import Button from "./primitives/Button.astro";
 
         <form
             class="max-w-2xl mx-auto space-y-6 md:flex md:items-center "
-            action="/submit"
+            action={actions.send}
             method="POST"
         >
             <div class="flex flex-col">
@@ -65,3 +67,22 @@ import Button from "./primitives/Button.astro";
         </form>
     </SectionContainer>
 </article>
+
+
+<script >
+
+    // function getFormData() {
+    //     document.querySelector("form")
+    //     .addEventListener("submit", (e) => {
+    //         e.preventDefault();
+    //         const form = e.target as HTMLFormElement;
+    //         const data = Object.fromEntries(new FormData(form));
+    //         alert(JSON.stringify(data, null, 2))
+    //     })
+    // }
+
+    // document.addEventListener("astro:page-load", () => {
+    //     getFormData();
+    // });
+
+</script>

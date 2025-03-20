@@ -1,0 +1,36 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Habilities from "@/components/Habilities.astro";
+import Project from "@/components/Project.astro";
+import Methodology from "@/components/Methodology.astro";
+import Results from "@/components/Results.astro";
+import Contact from "@/components/Contact.astro";
+import Footer from "@/components/Footer.astro";
+import Container from "@/components/Container.astro";
+import Hero from "@/components/Hero.astro";
+import CalltoactionSection from "@/components/CalltoactionSection.astro";
+
+// Metadatos SEO para la página principal
+const pageTitle = "Portfolio Freelance | Diseño y Desarrollo Web Profesional";
+const pageDescription = "Servicios de diseño web y desarrollo web profesional. Creación de sitios web modernos, rápidos y con un enfoque en SEO que destacan en el mercado.";
+const pageKeywords = ["diseño web", "desarrollo web", "freelance", "portfolio", "diseño responsive", "SEO", "UX/UI", "aplicaciones web", "sitios web rápidos"];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  author="Tu Nombre"
+  type="website"
+>
+    <Container>
+        <Hero />
+        <Habilities />
+        <Project />
+        <CalltoactionSection/>
+        <Methodology />
+        <Results />
+        <Contact />
+        <Footer />
+    </Container>
+</Layout>
