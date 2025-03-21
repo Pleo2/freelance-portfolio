@@ -6,7 +6,7 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
+	vite: {
     plugins: [tailwindcss()],
   },
 
@@ -17,4 +17,9 @@ export default defineConfig({
 
   output: 'server',
   adapter: vercel(),
+	experimental: {
+		svg: {
+			mode: "sprite",
+		},
+	},
 });

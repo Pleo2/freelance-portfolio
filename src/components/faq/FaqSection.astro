@@ -1,6 +1,5 @@
 ---
 import SectionContainer from "../projects/SectionContainer.astro";
-import Divisor from "../ui/Divisor.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 
 interface FaqItem {
@@ -18,7 +17,6 @@ const { items } = Astro.props;
 <article class="habilities-component h-max mx-4 pt-24">
     <SectionContainer>
         <SectionTitle title="Metodologia de trabajo" showLink={false} />
-        <Divisor space="sm" />
         <div class="flex flex-col gap-4 mt-4">
             {
                 items.map((item) => (
@@ -59,7 +57,7 @@ const { items } = Astro.props;
     function initializeFaq() {
         document.querySelectorAll(".faq-question").forEach((button) => {
             button.addEventListener("click", () => {
-                const faqItem = button.parentElement;
+                const faqItem = button.parentElement!;
                 faqItem.classList.toggle("active");
             });
         });

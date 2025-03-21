@@ -8,6 +8,7 @@ export interface Project {
     id: number;
     title: string;
     slug: string;
+    url: string;
     tags: string[];
     client: string;
     description: string;
@@ -45,6 +46,7 @@ export const projects: Project[] = [
         date: "2024-01-01",
         title: "e-commerce",
         slug: "ecommerce-website",
+        url: "/",
         tags: ["Diseño Web", "Desarrollo", "E-commerce"],
         client: "Tienda Moderna",
         description:
@@ -81,6 +83,7 @@ export const projects: Project[] = [
         date: "2024-01-01",
         title: "web de gestión",
         slug: "app-gestion",
+        url: "/",
         tags: ["Aplicación Web", "Dashboard", "SaaS"],
         client: "Empresa Gestión S.A.",
         description:
@@ -117,6 +120,7 @@ export const projects: Project[] = [
         date: "2024-01-01",
         title: "Rediseño sitio corporativo",
         slug: "rediseno-corporativo",
+        url: "/",
         tags: ["Diseño UX/UI", "Desarrollo Web", "SEO"],
         client: "Corporación Innovadora",
         description:
@@ -153,6 +157,7 @@ export const projects: Project[] = [
         date: "2024-02-15",
         title: "App Móvil Fitness",
         slug: "app-fitness",
+        url: "/",
         tags: ["Desarrollo Móvil", "React Native", "UX/UI"],
         client: "FitLife Pro",
         description:
@@ -189,6 +194,7 @@ export const projects: Project[] = [
         date: "2024-03-01",
         title: "Plataforma E-learning",
         slug: "plataforma-educativa",
+        url: "/",
         tags: ["LMS", "React", "Node.js", "MongoDB"],
         client: "Instituto Educativo Digital",
         description:
@@ -225,6 +231,7 @@ export const projects: Project[] = [
         date: "2024-03-15",
         title: "Sistema IoT Industrial",
         slug: "iot-industrial",
+        url: "/",
         tags: ["IoT", "Python", "AWS", "Data Analytics"],
         client: "Industria Conectada S.A.",
         description:
