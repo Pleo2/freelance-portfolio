@@ -70,7 +70,7 @@ const navLinks = [
                     <Fragment key={link.name}>
                         <a
                             href={link.href}
-                            class="text-5xl font-semibold text-foreground/90 hover:text-white transition-colors"
+                            class="text-5xl font-semibold text-white hover:text-white transition-colors"
                         >
                             {link.name}
                         </a>
@@ -82,58 +82,34 @@ const navLinks = [
 </header>
 
 <script>
-     let menuOpen = false;
-     const toggleBtn = document.getElementById("toggleMenu");
-     const mobileModal = document.getElementById("mobileModal");
-
-    function toggleModal() {
-            menuOpen = !menuOpen;
-            if (menuOpen) {
-                // Abrir menú
-                mobileModal.style.opacity = "1";
-                mobileModal.style.pointerEvents = "auto";
-                document.body.style.overflow = "hidden"; // Prevenir scroll
-            } else {
-                // Cerrar menú
-                mobileModal.style.opacity = "0";
-                mobileModal.style.pointerEvents = "none";
-                document.body.style.overflow = ""; // Restaurar scroll
-            }
-
-            toggleBtn.classList.toggle("open");
-    }
-
-    toggleBtn.addEventListener("click", toggleModal);
-
     function initializeNavigation() {
-        const mobileModal = document.getElementById("mobileModal");
-        const toggleBtn = document.getElementById("toggleMenu");
-        const header = document.getElementsByTagName("header")[0];
+        const mobileModal = document.getElementById("mobileModal")!;
+        const toggleBtn = document.getElementById("toggleMenu")!;
+        const header = document.getElementById("header-mobile")!;
 
-        // Estado del menú
         let menuOpen = false;
 
         function toggleModal() {
             menuOpen = !menuOpen;
             if (menuOpen) {
-                // Abrir menú
                 mobileModal.style.opacity = "1";
                 mobileModal.style.pointerEvents = "auto";
-                document.body.style.overflow = "hidden"; // Prevenir scroll
+                document.body.style.overflow = "hidden";
+                header.classList.remove("hidden");
             } else {
-                // Cerrar menú
                 mobileModal.style.opacity = "0";
                 mobileModal.style.pointerEvents = "none";
-                document.body.style.overflow = ""; // Restaurar scroll
+                document.body.style.overflow = "";
             }
 
-            toggleBtn.classList.toggle("open");
+            toggleBtn.classList.toggle("active");
+            toggleBtn.querySelectorAll("span").forEach((span, index) => {
+                span.classList.toggle(`line-${index + 1}-active`);
+            });
         }
 
-        // Evento para el botón hamburguesa
         toggleBtn.addEventListener("click", toggleModal);
 
-        // Cerrar el menú al hacer clic en un enlace
         const mobileLinks = mobileModal.querySelectorAll("a");
         mobileLinks.forEach((link) => {
             link.addEventListener("click", () => {
@@ -141,29 +117,19 @@ const navLinks = [
             });
         });
 
-        // Función para verificar si existe scroll al cargar la página
-        const checkInitialScroll = () => {
-            if (window.scrollY > 40) {
-                header.classList.add("hidden");
-            } else {
-                header.classList.remove("hidden");
-            }
-        };
+        function checkInitialScroll() {
+            header.classList.toggle("hidden", window.scrollY > 40);
+        }
 
-        // Ejecutar verificación inicial cuando la página está cargada
         checkInitialScroll();
 
-        // Control de la visibilidad del header al hacer scroll
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 40) {
-                header.classList.add("hidden");
-            } else {
-                header.classList.remove("hidden");
+            if (!menuOpen) {
+                header.classList.toggle("hidden", window.scrollY > 40);
             }
         });
     }
-    // Ejecutar la inicialización cuando el DOM está listo
+
     document.addEventListener("DOMContentLoaded", initializeNavigation);
-    // Ejecutar la inicialización cuando Astro cambia de página
     document.addEventListener("astro:page-load", initializeNavigation);
 </script>

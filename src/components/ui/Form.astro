@@ -1,0 +1,52 @@
+---
+import { actions } from "astro:actions";
+import Button from "../primitives/Button.astro";
+import Textarea from "../starwind/starwind/textarea";
+import Label from "../starwind/starwind/label";
+import Input from "../starwind/starwind/input";
+---
+
+<form
+    class="max-w-2xl mt-4 mx-auto space-y-2 md:flex md:flex-col md:justify-center md:flex-1 md:items-center"
+    action={actions.send}
+    method="POST"
+>
+    <div class="flex flex-col gap-2 w-full">
+        <Label for="name" id="name" size="sm">Nombre</Label>
+        <Input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Ingresa tu Nombre"
+        />
+    </div>
+
+    <div class="flex flex-col gap-2 w-full">
+        <Label for="email" id="email" size="sm">Email</Label>
+        <Input
+            id="email"
+            name="email"
+            required
+            type="email"
+            placeholder="Ingresa tu e-mail"
+        />
+
+        <div class="flex flex-col gap-2 w-full">
+            <Label for="message" id="message" size="sm">Mensaje</Label>
+            <Textarea
+                name="message"
+                size="md"
+                placeholder="Escribe tu mensaje por favor"
+            />
+        </div>
+
+        <Button
+            type="submit"
+            style="button"
+            size="lg"
+            text="Enviar"
+            icon="icon-arrow-up-right"
+            class="w-max self-center mt-2"
+        />
+    </div>
+</form>

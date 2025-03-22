@@ -1,0 +1,43 @@
+---
+import { Icon } from "astro-icon/components";
+import ContactElement from "@/components/contact/ContactElement.astro";
+---
+
+<div class="w-96 h-max md:flex-1 font-display">
+    <div class="title">Contactanos y obten una asesoria gratis</div>
+    <div
+        class="socials flex gap-2 [&>div]:bg-foreground/10 [&>div]:text-foreground [&>div]:p-2 [&>div]:rounded-lg mt-2"
+    >
+        <div class="github-icon">
+            <Icon name="icon-github" />
+        </div>
+        <div class="icon-email">
+            <Icon name="icon-at" />
+        </div>
+        <div class="x-icon">
+            <Icon name="icon-x" />
+        </div>
+    </div>
+
+    <div class="contact-info mt-4">
+        <p>Informacion de contacto</p>
+    </div>
+
+    <ContactElement
+        icon="icon-mail-box"
+        title="Email"
+        detail="leooel23m@gmail.com"
+    />
+
+    <ContactElement
+        icon="icon-phone"
+        title="Phone"
+        detail="+58 412-454-4213"
+        />
+
+    <ContactElement
+        icon="icon-map-pin"
+        title="Location"
+        detail="2005 Naguanagua, Manantial"
+    />
+</div>

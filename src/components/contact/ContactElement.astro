@@ -1,0 +1,14 @@
+---
+import { Icon } from "astro-icon/components";
+const { icon, title, detail } = Astro.props;
+---
+
+<div class="contact-element flex items-center justify-start gap-2 mt-2">
+    <div class="container-icon bg-background text-foreground p-2 rounded-lg">
+        <Icon name={icon} size={24} class="text-eggplant" />
+    </div>
+    <div class="container-name-element-more-info">
+        <div class="title-name-info">{title}</div>
+        <div class="info-detail">{detail}</div>
+    </div>
+</div>

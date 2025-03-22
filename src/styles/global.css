@@ -65,6 +65,7 @@ animation and trasnsition
 }
 
 #toggleMenu.open span:first-child {
+    background-color: white ;
     transform: rotate(-45deg);
     transform-origin: right;
 }
@@ -74,6 +75,7 @@ animation and trasnsition
 }
 
 #toggleMenu.open span:last-child {
+    background-color: white ;
     transform: rotate(45deg);
     transform-origin: right;
 }

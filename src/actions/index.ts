@@ -6,8 +6,9 @@ export const server = {
     send: defineAction({
         accept: "form",
         handler: async (e: FormData) => {
+            console.log(e);
             const info = Object.fromEntries(e);
-
+            console.log("info", info);
             const htmlContent = `
             <!DOCTYPE html>
             <html lang="es">

@@ -6,8 +6,8 @@ type Props = HTMLAttributes<"input"> & { size?: "sm" | "md" | "lg" };
 
 const input = tv({
 	base: [
-		"border-input bg-background text-foreground w-full rounded-md border",
-		"focus:outline-outline focus:ring-0 focus:outline-2 focus:outline-offset-2",
+    "bg-background text-foreground/80 font-sans min-h-10 w-full rounded-md border-[1px] border-foreground/20",
+    "focus:outline-[1px] focus:border-foreground/40",
 		"file:text-foreground file:my-auto file:mr-4 file:h-full file:border-0 file:bg-transparent file:text-sm file:font-medium",
 		"disabled:cursor-not-allowed disabled:opacity-50",
 		"peer placeholder:text-muted-foreground",
