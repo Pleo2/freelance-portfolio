@@ -21,7 +21,6 @@ export default defineConfig({
   adapter: vercel({
     edgeMiddleware: false,
     includeFiles: ['.env'],
-    serverEntry: 'dist/server/entry.mjs',
   }),
     experimental: {
         svg: {

@@ -1,8 +1,8 @@
-import { c as createComponent, a as createAstro, m as maybeRenderHead, r as renderComponent, b as renderTemplate, k as renderScript, l as addAttribute, s as spreadAttributes, n as renderSlot, F as Fragment } from '../chunks/astro/server_Bj56WB1G.mjs';
-import { i as $$Icon, d as $$SectionContainer, e as $$Link, f as $$Button, p as projects, g as $$Divisor, b as $$AnimatedBackground, c as $$AnimatedBackground2, $ as $$Layout, a as $$Container } from '../chunks/AnimatedBackground2_BJZOmtaN.mjs';
-import { $ as $$ProjectCard, a as $$CallToAction } from '../chunks/CallToAction_BNs4VGhu.mjs';
+import { c as createAstro, a as createComponent, m as maybeRenderHead, r as renderComponent, b as renderTemplate, h as renderScript, i as addAttribute, s as spreadAttributes, j as renderSlot, F as Fragment } from '../chunks/astro/server_aI_KE8ps.mjs';
+import { i as $$Icon, d as $$SectionContainer, e as $$Link, f as $$Button, p as projects, g as $$Divisor, b as $$AnimatedBackground, c as $$AnimatedBackground2, $ as $$Layout, a as $$Container } from '../chunks/AnimatedBackground2_DLBxKbf8.mjs';
+import { $ as $$ProjectCard, a as $$CallToAction } from '../chunks/CallToAction_wEcYpShv.mjs';
 /* empty css                                 */
-import { a as actions } from '../chunks/_astro_actions_CHG_fgL0.mjs';
+import { a as actions } from '../chunks/_astro_actions_C5dZlQlp.mjs';
 import { tv } from 'tailwind-variants';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { Canvas, useLoader } from '@react-three/fiber';
@@ -13,7 +13,7 @@ import { useEffect } from 'react';
 import * as THREE from 'three';
 export { renderers } from '../renderers.mjs';
 
-const $$Astro$8 = createAstro();
+const $$Astro$8 = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$CardHabilities = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$8, $$props, $$slots);
   Astro2.self = $$CardHabilities;
@@ -53,7 +53,7 @@ const $$Habilities = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<article class="habilities-component h-max mx-4 pt-32" id="skills"> ${renderComponent($$result, "SectionContainer", $$SectionContainer, {}, { "default": ($$result2) => renderTemplate` <h2 class="text-left text-foreground text-3xl font-sans font-semibold lg:max-w-[64%] md:text-4xl md:leading-[2.5rem]"> ${mainText} <span class="text-neutral-400">${mainText2}</span> </h2> <section class="cardContainer md:grid md:grid-cols-3 md:grid-rows-2 md:gap-24"> ${content.map((item) => renderTemplate`${renderComponent($$result2, "CardHabilities", $$CardHabilities, { "content": item })}`)} </section> ` })} </article>`;
 }, "/Users/pleo2/Dev/freelance/freelance-portfolio/src/components/Habilities.astro", void 0);
 
-const $$Astro$7 = createAstro();
+const $$Astro$7 = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$SectionTitle = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$7, $$props, $$slots);
   Astro2.self = $$SectionTitle;
@@ -65,7 +65,7 @@ const $$Project = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<article class="habilities-component h-max mx-4 pt-24"> ${renderComponent($$result, "SectionContainer", $$SectionContainer, {}, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "SectionTitle", $$SectionTitle, {})} ${renderComponent($$result2, "Divisor", $$Divisor, { "space": "sm" })} <div class="project-container flex flex-col items-center md:flex-row md:justify-between"> ${projects.slice(0, 2).map((_) => renderTemplate`${renderComponent($$result2, "ProjectCard", $$ProjectCard, { "id": _.id, "title": _.title, "description": _.description, "image": _.image })}`)} </div> ` })} </article>`;
 }, "/Users/pleo2/Dev/freelance/freelance-portfolio/src/components/Project.astro", void 0);
 
-const $$Astro$6 = createAstro();
+const $$Astro$6 = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$FaqSection = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$6, $$props, $$slots);
   Astro2.self = $$FaqSection;
@@ -73,7 +73,7 @@ const $$FaqSection = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<div class="habilities-component h-max mx-4 pt-24" data-astro-cid-cpjdupfh> ${renderComponent($$result, "SectionContainer", $$SectionContainer, { "data-astro-cid-cpjdupfh": true }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "SectionTitle", $$SectionTitle, { "title": "Preguntas Frecuentes", "showLink": false, "data-astro-cid-cpjdupfh": true })} <div class="flex flex-col gap-4 mt-4" data-astro-cid-cpjdupfh> ${items.map((item) => renderTemplate`<div class="faq-item rounded-lg inset-shadow-2xs inset-shadow-foreground/20" data-astro-cid-cpjdupfh> <button class="faq-question w-full flex justify-between items-center p-2 bg-background/20 cursor-pointer text-left font-xl text-foreground/80 hover:bg-background/30 transition-colors duration-200" data-astro-cid-cpjdupfh> <span data-astro-cid-cpjdupfh>${item.question}</span> <svg class="faq-icon w-6 h-6 text-foreground/80 transition-transform duration-300 ease-out" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" data-astro-cid-cpjdupfh> <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" data-astro-cid-cpjdupfh></path> </svg> </button> <div class="faq-answer nset-shadow-2xs inset-shadow-foreground/20 max-h-0 overflow-hidden transition-all duration-200 ease-out bg-background/20" data-astro-cid-cpjdupfh> <p class="font-sans text-sm text-foreground/70 leading-relaxed mx-2" data-astro-cid-cpjdupfh> ${item.answer} </p> </div> </div>`)} </div> ` })} </div>  ${renderScript($$result, "/Users/pleo2/Dev/freelance/freelance-portfolio/src/components/faq/FaqSection.astro?astro&type=script&index=0&lang.ts")}`;
 }, "/Users/pleo2/Dev/freelance/freelance-portfolio/src/components/faq/FaqSection.astro", void 0);
 
-const $$Astro$5 = createAstro();
+const $$Astro$5 = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$Faq = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$Faq;
@@ -98,7 +98,7 @@ const $$Faq = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<article class="habilities-component h-max " id="Faq"> ${renderComponent($$result, "FaqSection", $$FaqSection, { "items": faqItems })} </article>`;
 }, "/Users/pleo2/Dev/freelance/freelance-portfolio/src/components/Faq.astro", void 0);
 
-const $$Astro$4 = createAstro();
+const $$Astro$4 = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$Textarea = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$Textarea;
@@ -123,7 +123,7 @@ const $$Textarea = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<textarea${addAttribute(textarea({ size, class: className }), "class")}${spreadAttributes(rest)}></textarea>`;
 }, "/Users/pleo2/Dev/freelance/freelance-portfolio/src/components/starwind/starwind/textarea/Textarea.astro", void 0);
 
-const $$Astro$3 = createAstro();
+const $$Astro$3 = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$Label = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Label;
@@ -139,7 +139,7 @@ const $$Label = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<label${addAttribute(label({ size, class: className }), "class")}${spreadAttributes(rest)}> ${renderSlot($$result, $$slots["default"])} </label>`;
 }, "/Users/pleo2/Dev/freelance/freelance-portfolio/src/components/starwind/starwind/label/Label.astro", void 0);
 
-const $$Astro$2 = createAstro();
+const $$Astro$2 = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$Input = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Input;
@@ -164,7 +164,7 @@ const $$Form = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<form class="w-full max-w-2xl mt-4 mx-auto space-y-2 px-2 md:flex md:flex-col md:justify-center"${addAttribute(actions.send, "action")} method="POST"> <div class="flex flex-col gap-2 w-full"> ${renderComponent($$result, "Label", $$Label, { "for": "name", "id": "name", "size": "sm" }, { "default": ($$result2) => renderTemplate`Nombre` })} ${renderComponent($$result, "Input", $$Input, { "id": "name", "name": "name", "type": "text", "placeholder": "Ingresa tu Nombre" })} </div> <div class="flex flex-col gap-2 w-full"> ${renderComponent($$result, "Label", $$Label, { "for": "email", "id": "email", "size": "sm" }, { "default": ($$result2) => renderTemplate`Email` })} ${renderComponent($$result, "Input", $$Input, { "id": "email", "name": "email", "required": true, "type": "email", "placeholder": "Ingresa tu e-mail" })} <div class="flex flex-col gap-2 w-full"> ${renderComponent($$result, "Label", $$Label, { "for": "message", "id": "message", "size": "sm" }, { "default": ($$result2) => renderTemplate`Mensaje` })} ${renderComponent($$result, "Textarea", $$Textarea, { "name": "message", "size": "md", "placeholder": "Escribe tu mensaje por favor" })} </div> ${renderComponent($$result, "Button", $$Button, { "type": "submit", "style": "button", "size": "lg", "text": "Enviar", "icon": "icon-arrow-up-right", "class": "w-max self-center mt-2" })} </div> </form>`;
 }, "/Users/pleo2/Dev/freelance/freelance-portfolio/src/components/ui/Form.astro", void 0);
 
-const $$Astro$1 = createAstro();
+const $$Astro$1 = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$ContactElement = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$ContactElement;
@@ -264,7 +264,7 @@ const Scene = () => {
   );
 };
 
-const $$Astro = createAstro();
+const $$Astro = createAstro("https://freelance-portfolio-neon.vercel.app/");
 const $$Hero = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$Hero;
