@@ -20,7 +20,8 @@ export default defineConfig({
   output: 'server',
   adapter: vercel({
     edgeMiddleware: false,
-    includeFiles: ['.env']
+    includeFiles: ['.env'],
+    serverEntry: 'dist/server/entry.mjs',
   }),
     experimental: {
         svg: {

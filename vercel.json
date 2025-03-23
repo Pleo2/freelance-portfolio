@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": ".vercel/output/functions/_render.func/entry.mjs",
+        "src": "dist/server/entry.mjs",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": ".vercel/output/functions/_render.func/entry.mjs"
+        "dest": "dist/server/entry.mjs"
       }
     ]
   }
