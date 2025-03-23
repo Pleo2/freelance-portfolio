@@ -2,12 +2,12 @@
 import AnimatedBackground from "@/components/AnimatedBackground.astro";
 import AnimatedBackground2 from "@/components/AnimatedBackground2.astro";
 import Navbar from "@/components/navigation/Navbar.astro";
-import MouseBounce from "@/components/ui/MouseBounce.astro";
+import MouseBounce from "./ui/mouseBounce.astro";
 const { dynamic = false } = Astro.props;
 ---
 
 <div
-    class="relative isolate h-dvh dark:bg-stone-950 overflow-hidden lg:overflow-visible md:mt-0 md:justify-center md:flex md:flex-col md:gap-12 md:h-screen md:w-full"
+    class="relative isolate h-dvh dark:bg-stone-950 mx-auto overflow-hidden lg:overflow-visible md:mt-0 md:justify-center md:flex md:flex-col md:gap-12 md:h-screen md:w-full"
 >
     <Navbar />
     <AnimatedBackground position="left" />

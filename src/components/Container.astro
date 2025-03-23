@@ -11,6 +11,6 @@ const { class: className, id, tag = "section", ...rest } = Astro.props;
 const Element = tag;
 ---
 
-<Element id={id} class:list={["max-w-[90rem] mx-auto", className]} {...rest}>
+<Element id={id} class:list={["w-screen md:max-w-[1440px] md:mx-auto", className]} {...rest}>
     <slot />
 </Element>
