@@ -12,5 +12,11 @@
           { "key": "Content-Type", "value": "application/octet-stream" }
         ]
       }
+    ],
+    "routes": [
+      {
+        "src": "/.*",
+        "dest": "/dist/server/entry.mjs"
+      }
     ]
   }
