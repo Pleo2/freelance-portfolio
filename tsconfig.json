@@ -1,19 +1,28 @@
 {
-    "extends": "astro/tsconfigs/strict",
-    "include": [".astro/types.d.ts", "**/*"],
-    "exclude": ["dist"],
-    "compilerOptions": {
-        "moduleResolution": "bundler",
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["./src/*"]
-        },
-        "plugins": [
-            {
-                "name": "@astrojs/ts-plugin"
-            }
-        ],
-        "target": "es2022",
-        "module": "esnext",
-    }
+  "extends": "astro/tsconfigs/strict",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      }
+    ],
+    "target": "es2022",
+    "module": "esnext",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
+  }
 }
