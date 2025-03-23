@@ -1,6 +1,6 @@
-import { a as createComponent, r as renderComponent, b as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_aI_KE8ps.mjs';
-import { $ as $$Layout, a as $$Container, b as $$AnimatedBackground, c as $$AnimatedBackground2, d as $$SectionContainer, e as $$Link, f as $$Button, g as $$Divisor, p as projects } from '../chunks/AnimatedBackground2_DLBxKbf8.mjs';
-import { $ as $$ProjectCard, a as $$CallToAction } from '../chunks/CallToAction_wEcYpShv.mjs';
+import { a as createComponent, r as renderComponent, b as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_BkGDJkZ1.mjs';
+import { $ as $$Layout, a as $$Container, b as $$AnimatedBackground, c as $$AnimatedBackground2, d as $$SectionContainer, e as $$Link, f as $$Button, g as $$Divisor, p as projects } from '../chunks/AnimatedBackground2_Do4Ys7CZ.mjs';
+import { $ as $$ProjectCard, a as $$CallToAction } from '../chunks/CallToAction_DzOLZoGe.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {

@@ -27,7 +27,4 @@ pnpm-debug.log*
 # ignore all content in dist directory
 dist/**
 dist
-
-# ignore all content in .vercel directory
-.vercel/**
-.vercel
+/.vercel/**

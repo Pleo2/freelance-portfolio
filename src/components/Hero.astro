@@ -1,11 +1,9 @@
- ---
+---
 import AnimatedBackground from "@/components/AnimatedBackground.astro";
 import AnimatedBackground2 from "@/components/AnimatedBackground2.astro";
 import Navbar from "@/components/navigation/Navbar.astro";
 import MouseBounce from "./ui/mouseBounce.astro";
 import SectionContainer from "./projects/SectionContainer.astro";
-import {Scene} from "@/components/react/Scene.tsx"
-const { dynamic = false } = Astro.props;
 ---
 
 <div
@@ -69,10 +67,7 @@ const { dynamic = false } = Astro.props;
             <section
                 class="overflow-hidden flex-1 w-full mx-auto -bottom-[0px]"
             >
-                <div
-                    class="w-full h-full aspect-ratio rounded-full mx-auto"
-                >
-                    <Scene client:load/>
+                <div class="w-full h-full aspect-ratio rounded-full mx-auto">
                 </div>
             </section>
         </SectionContainer>
