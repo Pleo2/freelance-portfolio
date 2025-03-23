@@ -50,6 +50,9 @@ importers:
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
+      gltfpack:
+        specifier: ^0.23.0
+        version: 0.23.0
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -1486,6 +1489,11 @@ packages:
 
   glsl-noise@0.0.0:
     resolution: {integrity: sha512-b/ZCF6amfAUb7dJM/MxRs7AetQEahYzJ8PtgfrmEdtw6uyGOr+ZSGtgjFm6mfsBkxJ4d2W7kg+Nlqzqvn3Bc0w==}
+
+  gltfpack@0.23.0:
+    resolution: {integrity: sha512-oe+ScPfLUh7bnrPoC4L7gKOKGXCSxsD4xNdaKGBuqq6xGeVzHQbQnNuyfIsdxUa1kXA5zjvfC4Z3PPP9vXEjRg==}
+    engines: {node: '>=18'}
+    hasBin: true
 
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
@@ -4282,6 +4290,8 @@ snapshots:
   globals@15.15.0: {}
 
   glsl-noise@0.0.0: {}
+
+  gltfpack@0.23.0: {}
 
   gopd@1.2.0: {}
 

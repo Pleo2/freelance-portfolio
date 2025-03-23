@@ -1,19 +1,21 @@
 import { renderers } from './renderers.mjs';
-import { a as actions } from './chunks/_noop-actions_CfKMStZn.mjs';
-import { c as createExports } from './chunks/entrypoint_CjphUGoF.mjs';
-import { manifest } from './manifest_cjowlst8.mjs';
+import { a as actions } from './chunks/_astro-internal_actions_8zafMzkE.mjs';
+import { c as createExports } from './chunks/entrypoint_D21C57Wg.mjs';
+import { manifest } from './manifest_AgtQ-6C8.mjs';
 
 const serverIslandMap = new Map();;
 
 const _page0 = () => import('./pages/_image.astro.mjs');
-const _page1 = () => import('./pages/projects/_id_.astro.mjs');
-const _page2 = () => import('./pages/projects.astro.mjs');
-const _page3 = () => import('./pages/index.astro.mjs');
+const _page1 = () => import('./pages/_actions/_---path_.astro.mjs');
+const _page2 = () => import('./pages/projects/_id_.astro.mjs');
+const _page3 = () => import('./pages/projects.astro.mjs');
+const _page4 = () => import('./pages/index.astro.mjs');
 const pageMap = new Map([
-    ["../../../AppData/Local/Yarn/Berry/cache/astro-npm-5.5.2-e31fbdfe1a-10c0.zip/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
-    ["src/pages/projects/[id].astro", _page1],
-    ["src/pages/projects/index.astro", _page2],
-    ["src/pages/index.astro", _page3]
+    ["node_modules/.pnpm/astro@5.5.3_@types+node@22.13.10_jiti@2.4.2_lightningcss@1.29.2_rollup@4.36.0_typescript@5.4.2_yaml@2.7.0/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
+    ["node_modules/.pnpm/astro@5.5.3_@types+node@22.13.10_jiti@2.4.2_lightningcss@1.29.2_rollup@4.36.0_typescript@5.4.2_yaml@2.7.0/node_modules/astro/dist/actions/runtime/route.js", _page1],
+    ["src/pages/projects/[id].astro", _page2],
+    ["src/pages/projects/index.astro", _page3],
+    ["src/pages/index.astro", _page4]
 ]);
 
 const _manifest = Object.assign(manifest, {
@@ -24,7 +26,7 @@ const _manifest = Object.assign(manifest, {
     middleware: () => import('./_noop-middleware.mjs')
 });
 const _args = {
-    "middlewareSecret": "6d836443-9ab2-4541-b354-52639d9be1ee",
+    "middlewareSecret": "86646dcb-5676-4a56-bcda-5d198dcddc6e",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);

@@ -20,7 +20,7 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^/projects/([^/]+?)/?$",
+			"src": "^/_actions(?:/(.*?))?/?$",
 			"dest": "_render"
 		},
 		{
