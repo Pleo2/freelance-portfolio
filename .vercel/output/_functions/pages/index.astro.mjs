@@ -1,8 +1,8 @@
-import { c as createComponent, a as createAstro, m as maybeRenderHead, r as renderComponent, b as renderTemplate, h as renderScript, i as addAttribute, s as spreadAttributes, j as renderSlot, F as Fragment } from '../chunks/astro/server_DXnayVh2.mjs';
-import { i as $$Icon, d as $$SectionContainer, e as $$Link, f as $$Button, p as projects, g as $$Divisor, b as $$AnimatedBackground, c as $$AnimatedBackground2, $ as $$Layout, a as $$Container } from '../chunks/AnimatedBackground2_BntxB4G0.mjs';
-import { $ as $$ProjectCard, a as $$CallToAction } from '../chunks/CallToAction_CzhPWQMk.mjs';
+import { c as createComponent, a as createAstro, m as maybeRenderHead, r as renderComponent, b as renderTemplate, k as renderScript, l as addAttribute, s as spreadAttributes, n as renderSlot, F as Fragment } from '../chunks/astro/server_Bj56WB1G.mjs';
+import { i as $$Icon, d as $$SectionContainer, e as $$Link, f as $$Button, p as projects, g as $$Divisor, b as $$AnimatedBackground, c as $$AnimatedBackground2, $ as $$Layout, a as $$Container } from '../chunks/AnimatedBackground2_BJZOmtaN.mjs';
+import { $ as $$ProjectCard, a as $$CallToAction } from '../chunks/CallToAction_BNs4VGhu.mjs';
 /* empty css                                 */
-import { a as actions } from '../chunks/_astro_actions_DNOVdKl4.mjs';
+import { a as actions } from '../chunks/_astro_actions_CHG_fgL0.mjs';
 import { tv } from 'tailwind-variants';
 import { jsxs, jsx } from 'react/jsx-runtime';
 import { Canvas, useLoader } from '@react-three/fiber';
@@ -240,8 +240,7 @@ const Scene = () => {
       },
       camera: {
         position: [5, 2, 5],
-        fov: 35,
-        target: [0, 0.5, 0]
+        fov: 35
       },
       shadows: true,
       children: [

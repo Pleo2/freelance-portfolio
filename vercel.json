@@ -1,22 +1,15 @@
 {
-    "headers": [
+    "version": 2,
+    "builds": [
       {
-        "source": "/(.*).gltf",
-        "headers": [
-          { "key": "Content-Type", "value": "model/gltf+json" }
-        ]
-      },
-      {
-        "source": "/(.*).bin|/(.*).glb",
-        "headers": [
-          { "key": "Content-Type", "value": "application/octet-stream" }
-        ]
+        "src": ".vercel/output/functions/_render.func/entry.mjs",
+        "use": "@vercel/node"
       }
     ],
     "routes": [
       {
-        "src": "/.*",
-        "dest": "/dist/server/entry.mjs"
+        "src": "/(.*)",
+        "dest": ".vercel/output/functions/_render.func/entry.mjs"
       }
     ]
   }

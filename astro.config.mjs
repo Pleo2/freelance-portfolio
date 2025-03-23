@@ -17,7 +17,10 @@ export default defineConfig({
   integrations: [icon(), react()],
 
   output: 'server',
-  adapter: vercel(),
+  adapter: vercel({
+    edgeMiddleware: false,
+    includeFiles: ['.env']
+  }),
     experimental: {
         svg: {
             mode: "sprite",
