@@ -1,7 +1,5 @@
 ---
-import Button from "@/components/primitives/Button.astro";
 import { type Project, projects } from "@/assets/mocks/projects";
-import Link from "./primitives/Link.astro";
 import ProjectCard from "@/components/projects/ProjectCard.astro";
 import SectionContainer from "./projects/SectionContainer.astro";
 import Divisor from "./ui/Divisor.astro";
@@ -13,7 +11,7 @@ import SectionTitle from "./ui/SectionTitle.astro";
         <SectionTitle />
         <Divisor space="sm"/>
         <div
-            class="project-container grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12"
+            class="project-container flex flex-col items-center md:flex-row md:justify-between"
         >
             {
                 projects

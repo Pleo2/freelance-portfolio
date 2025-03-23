@@ -1,8 +1,8 @@
 ---
-const { class: className } = Astro.props;
+const { class: className, border } = Astro.props;
 ---
 
 
-<div class={`container border-[1px] border-foreground/20 rounded-lg p-4 bg-background ${className}`}>
+<div class={`container ${border ? 'bg-background' : 'bg-transparent border-none'} ${border ? 'border-[1px] border-foreground/20' : ''} rounded-lg p-4 ${className}`}>
     <slot/>
 </div>

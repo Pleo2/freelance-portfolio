@@ -6,17 +6,17 @@ const navLinks = [
     { name: "Inicio", href: "/" },
     { name: "Habilidades", href: "#skills" },
     { name: "Proyectos", href: "/projects" },
-    { name: "Metodología", href: "#methodology" },
-    { name: "Testimonios", href: "#testimonials" },
-    { name: "Contacto", href: "#contact" }
+    { name: "Faq", href: "#Faq" },
+    // { name: "Testimonios", href: "#testimonials" },
+    // { name: "Contacto", href: "#contact" }
 ];
 ---
 
 <header
     id="header-mobile"
-    class="fixed top-0 left-0 py-6 max-w-[90rem] max-h-dvh w-dvw h-dvh z-50 transition-all duration-500 md:max-w-full md:backdrop-blur-xl md:h-max hidden"
+    class="fixed top-0 left-0 py-6 max-w-[90rem] max-h-dvh w-dvw h-dvh z-50 transition-all duration-500 md:max-w-full md:backdrop-blur-xl md:h-max hidden "
 >
-    <div class="container px-4 mx-auto flex items-center justify-between md:max-w-[90rem]">
+    <div class="container px-4 mx-auto flex items-center justify-between md:max-w-[90rem] md:px-8">
         <Link
             id="branding"
             href="/"
@@ -38,7 +38,9 @@ const navLinks = [
                     </Fragment>
                 ))
             }
-            <Button href="/contact" style="primary" text="Hablemos" size="lg" />
+            <a href="#contact">
+                <Button style="primary" text="Hablemos" size="lg" />
+            </a>
         </nav>
 
         {/* Mobile Hamburger Button con transición */}

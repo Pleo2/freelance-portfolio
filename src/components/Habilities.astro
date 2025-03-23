@@ -1,5 +1,6 @@
 ---
 import CardHabilities from "./habilities/cardHabilities.astro";
+import SectionContainer from "./projects/SectionContainer.astro";
 
 const mainText =
     "Especializado en aplicaciones escalables rendimiento web y código limpio.";
@@ -39,16 +40,18 @@ const content = [
 ];
 ---
 
-<article class="habilities-component h-max mx-4 pt-32">
-    <h2
-        class="text-left text-foreground text-3xl font-sans font-semibold lg:max-w-[64%] md:text-4xl md:leading-[2.5rem]"
-    >
-        {mainText}
-        <span class="text-neutral-400">{mainText2}</span>
-    </h2>
-    <section
-        class="cardContainer md:grid md:grid-cols-3 md:grid-rows-2 md:gap-24"
-    >
-        {content.map((item) => <CardHabilities content={item} />)}
-    </section>
+<article class="habilities-component h-max mx-4 pt-32" id="skills">
+    <SectionContainer >
+        <h2
+            class="text-left text-foreground text-3xl font-sans font-semibold lg:max-w-[64%] md:text-4xl md:leading-[2.5rem]"
+        >
+            {mainText}
+            <span class="text-neutral-400">{mainText2}</span>
+        </h2>
+        <section
+            class="cardContainer md:grid md:grid-cols-3 md:grid-rows-2 md:gap-24"
+        >
+            {content.map((item) => <CardHabilities content={item} />)}
+        </section>
+    </SectionContainer>
 </article>

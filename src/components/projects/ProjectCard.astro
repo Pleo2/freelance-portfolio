@@ -18,7 +18,9 @@ const { id, title, description, image } = Astro.props;
 
 <div class="project-card mt-4">
     <!-- @ts-ignore -->
-    <Image  id={id} image={image}/>
+    <Link href={`/projects/${id}`}>
+        <Image  id={id} image={image}/>
+    </Link>
     <div class="project-info-redirect flex justify-start items-center gap-4 h-max">
         <Link href={`/projects/${id}`}>
             <Button
@@ -28,12 +30,12 @@ const { id, title, description, image } = Astro.props;
                 class="h-12 w-12 text-foreground/50"
             />
         </Link>
-        <div class="project-info flex-1 w-[80%] h-12">
-            <h3 class="font-display font-thing text-foreground text-xl">
+        <div class="project-info flex-1 w-50 md:w-80 h-12">
+            <h3 class="font-display font-thing text-foreground text-xl ">
                 {title}
             </h3>
             <p
-                class="font-sans truncate line-clamp-2 max-w-3/4 text-[0.7rem] text-foreground/50"
+                class="font-sans truncate line-clamp-2 text-[0.7rem] text-foreground/50"
             >
                 {description}
             </p>

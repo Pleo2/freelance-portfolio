@@ -21,7 +21,9 @@
     --color-desert-sand: hsla(27, 57%, 76%, 1);
     --color-caput-mortuum: hsla(358, 28%, 26%, 1);
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: var(--color-background);
     color: var(--color-foreground);

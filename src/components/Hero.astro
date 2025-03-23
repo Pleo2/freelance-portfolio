@@ -1,8 +1,9 @@
----
+ ---
 import AnimatedBackground from "@/components/AnimatedBackground.astro";
 import AnimatedBackground2 from "@/components/AnimatedBackground2.astro";
 import Navbar from "@/components/navigation/Navbar.astro";
 import MouseBounce from "./ui/mouseBounce.astro";
+import SectionContainer from "./projects/SectionContainer.astro";
 const { dynamic = false } = Astro.props;
 ---
 
@@ -16,64 +17,68 @@ const { dynamic = false } = Astro.props;
     <main
         class="mt-24 flex flex-col justify-between items-center gap-4 px-4 md:flex-row md:gap-0 2xl:mt-24"
     >
-        <section
-            class="text flex-2 flex flex-col gap-1 items-start justify-center"
-        >
-            <h3
-                class="inline-block font-mono font-medium text-xs w-max px-2 py-1 bg-white/5 backdrop-blur-md border border-foreground/10 rounded-full animate-fade-in"
+        <SectionContainer class="md:flex-row md:flex">
+            <section
+                class="text flex-2 flex flex-col gap-1 items-start justify-center"
             >
-                Desarrollador Frontend Freelance
-            </h3>
-            <h1 class="text-4xl md:text-7xl font-sans leading-tight my-3">
-                <span class="inline">Transformamos</span>
-                <span class="font-bold p-1 rounded"> Ideas </span>
-                <span> en </span>
-                <span class="font-bold p-1 rounded"> Experiencias </span>
-                <span> digitales con impacto. </span>
-            </h1>
-            <h2
-                class="flex flex-col text-xl font-semibold mb-3 [&>span]:inline-block mt-6"
-            >
-                <span>+ Desarrollo frontend avanzado </span>
-                <span>+ SEO optimizado </span>
-                <span>+ Diseños innovadores </span>
-                <span
-                    class="text-neutral-400 text-xs inline-block font-medium font-mono"
+                <h3
+                    class="inline-block font-mono font-medium text-xs w-max px-2 py-1 bg-white/5 backdrop-blur-md border border-foreground/10 rounded-full animate-fade-in"
                 >
-                    Contactenos para obtener una consulta gratuita.
-                </span>
-            </h2>
-            <button
-                class="flex gap-1 px-6 py-2.5 mt-4 text-xl font-semibold bg-foreground text-background rounded-xl items-center justify-center"
-                >Contactanos
-                <span class="w-6 h-6"
-                    ><svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-arrow-up-right"
-                        ><path d="M7 7h10v10"></path><path d="M7 17 17 7"
-                        ></path></svg
-                    ></span
+                    Desarrollador Frontend Freelance
+                </h3>
+                <h1 class="text-4xl md:text-7xl font-sans leading-tight my-3">
+                    <span class="inline">Transformamos</span>
+                    <span class="font-bold p-1 rounded"> Ideas </span>
+                    <span> en </span>
+                    <span class="font-bold p-1 rounded"> Experiencias </span>
+                    <span> digitales con impacto. </span>
+                </h1>
+                <h2
+                    class="flex flex-col text-xl font-semibold mb-3 [&>span]:inline-block mt-6"
                 >
-            </button>
-        </section>
-        <section class="overflow-hidden flex-1 w-full mx-auto -bottom-[0px]">
-            <div
-                class="from-blue-500 to-blue-200 h-80 w-80 aspect-ratio rounded-full mx-auto"
+                    <span>+ Desarrollo frontend avanzado </span>
+                    <span>+ SEO optimizado </span>
+                    <span>+ Diseños innovadores </span>
+                    <span
+                        class="text-neutral-400 text-xs inline-block font-medium font-mono"
+                    >
+                        Contactenos para obtener una consulta gratuita.
+                    </span>
+                </h2>
+                <button
+                    class="flex gap-1 px-6 py-2.5 mt-4 text-xl font-semibold bg-foreground text-background rounded-xl items-center justify-center"
+                    >Contactanos
+                    <span class="w-6 h-6"
+                        ><svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-arrow-up-right"
+                            ><path d="M7 7h10v10"></path><path d="M7 17 17 7"
+                            ></path></svg
+                        ></span
+                    >
+                </button>
+            </section>
+            <section
+                class="overflow-hidden flex-1 w-full mx-auto -bottom-[0px]"
             >
-                <img
-                    src="https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                    alt="bg-image"
-                    class="w-full h-full bg-cover rounded-full"
-                />
-            </div>
-        </section>
+                <div
+                    class="from-blue-500 to-blue-200 h-80 w-80 aspect-ratio rounded-full mx-auto"
+                >
+                    <img
+                        src="https://images.pexels.com/photos/1242348/pexels-photo-1242348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="bg-image"
+                        class="w-full h-full bg-cover rounded-full"
+                    />
+                </div>
+            </section>
+        </SectionContainer>
     </main>
     <MouseBounce />
 </div>
