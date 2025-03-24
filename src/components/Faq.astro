@@ -1,26 +1,85 @@
 ---
-import FaqSection from "@/components/faq/FaqSection.astro"
+import FaqSection from "@/components/faq/FaqSection.astro";
 
 const faqItems = [
-  {
-    question: "¿Qué es Astro?",
-    answer: "Astro es un framework web moderno que permite construir sitios web más rápidos con menos JavaScript. Combina lo mejor de los frameworks estáticos y dinámicos."
-  },
-  {
-    question: "¿Por qué usar Tailwind CSS?",
-    answer: "Tailwind CSS es un framework de utilidades CSS que permite diseñar rápidamente interfaces personalizadas sin salir de tu HTML. Proporciona flexibilidad y mantenibilidad sin sacrificar la velocidad de desarrollo."
-  },
-  {
-    question: "¿Cómo funciona Alpine.js?",
-    answer: "Alpine.js es un framework JavaScript minimalista que te permite agregar comportamiento dinámico a tu HTML con una sintaxis declarativa simple. Es perfecto para interacciones pequeñas como menús desplegables y modales."
-  },
-  {
-    question: "¿Es responsive este diseño?",
-    answer: "Sí, este diseño es completamente responsive y se adapta a diferentes tamaños de pantalla gracias a las utilidades de Tailwind CSS."
-  }
+    {
+        question: "¿Qué servicios ofrece tu agencia freelance?",
+        answers: [
+            "Desarrollo sitios web estáticos ultra-rápidos con Astro (ideal para portfolios, landing pages o sitios informativos) y aplicaciones web dinámicas con Next.js y Vite + React (para e-commerce, dashboards o plataformas interactivas). Además, integro diseño personalizado, optimización SEO avanzada y animaciones fluidas para mejorar la experiencia de usuario."
+        ]
+    },
+    {
+        question: "¿Por qué elegirte sobre otras agencias?",
+        answers: [
+            "Combino la velocidad de desarrollo (gracias a plantillas premium optimizadas) con tecnologías modernas:",
+            "Astro: Rendimiento máximo para sitios estáticos (90+ en Lighthouse).",
+            "Next.js: Funcionalidades dinámicas con SSR y rutas inteligentes.",
+            "React + Vite: Interactividad ágil y escalable.",
+            "Cada proyecto incluye una auditoría SEO técnica y estrategias documentadas de metadata."
+        ]
+    },
+    {
+        question: "¿Cómo manejas el proceso de desarrollo?",
+        answers: [
+            "Fases claras y colaborativas:",
+            "Descubrimiento: Análisis de objetivos y SEO.",
+            "Diseño UI/UX: Wireframes con Figma e implementación de animaciones (ejemplo: View Transitions API).",
+            "Desarrollo: Uso de plantillas preoptimizadas para reducir tiempos sin sacrificar personalización.",
+            "Testing: Validación cross-browser, rendimiento y SEO.",
+            "Lanzamiento y soporte: Asesoría en hosting y mantenimiento post-deploy."
+        ]
+    },
+    {
+        question: "¿Cómo garantizas el SEO?",
+        answers: [
+            "Estructuro el código semánticamente (HTML5, schema markup) y optimizo imágenes (WebP, lazy loading). Además, integro herramientas SEO (como Google Search Console y Lighthouse) y aplico buenas prácticas (robots.txt, sitemap.xml) para un rendimiento óptimo."
+        ]
+    },
+    {
+        question: "¿Qué ventajas ofrecen Astro y Next.js para mi proyecto?",
+        answers: [
+            "Astro: Menos JavaScript y carga instantánea, ideal para blogs y sitios de servicios.",
+            "Integración de frameworks (React, Vue, Svelte) y optimización automática.",
+            "Generación de páginas estáticas (SSG) y prerenderizado.",
+            "Soporte para Markdown y MDX."
+        ]
+    },
+    {
+        question: "¿Trabajas con diseños custom o solo plantillas?",
+        answers: [
+            "Uso plantillas como base para acelerar el desarrollo, pero customizo el 100% del diseño para alinearlo a tu branding. Ejemplos:",
+            "Plantillas premium optimizadas para SEO y velocidad.",
+            "Personalización de componentes (botones, formularios, etc.).",
+            "Animaciones hechas a medida (ejemplo: microinteracciones en hover).",
+            "Ajustes en layouts para priorizar tu contenido.",
+            "Integración de identidad visual (colores, tipografías, imágenes)."
+        ]
+    },
+    {
+        question: "¿Cuál es tu política de entregas y revisiones?",
+        answers: [
+            "Realizo entregas puntuales y ofrezco revisiones ilimitadas hasta que el proyecto cumpla con tus expectativas, garantizando así tu satisfacción total."
+        ]
+    },
+    {
+        question: "¿Cómo manejas los plazos y presupuestos?",
+        answers: [
+            "Ofrezco presupuestos fijos y transparentes, sin costos ocultos. Los plazos realistas son:",
+            "2 a 4 semanas para sitios estáticos.",
+            "4 a 8 semanas para aplicaciones dinámicas.",
+            "Utilizo metodologías ágiles (por ejemplo, Sprints con Trello o Notion) para mantener una comunicación constante y actualizaciones regulares."
+        ]
+    },
+    {
+        question: "¿Qué tecnologías específicas usas para animaciones?",
+        answers: [
+            "No ofrezco hosting ni dominios directamente, pero puedo recomendarte proveedores confiables y ayudarte a configurar tu dominio y hosting. Mis recomendaciones incluyen Netlify, Vercel y DigitalOcean, dependiendo de tus necesidades específicas.",
+            "Optimizo builds para reducir costos de hosting."
+        ]
+    }
 ];
 ---
 
-<article class="habilities-component h-max " id="Faq">
+<article class="habilities-component h-max" id="Faq">
     <FaqSection items={faqItems} />
 </article>

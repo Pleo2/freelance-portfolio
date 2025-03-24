@@ -4,7 +4,7 @@ import SectionTitle from "../ui/SectionTitle.astro";
 
 interface FaqItem {
     question: string;
-    answer: string;
+    answers: string[];
 }
 
 interface Props {
@@ -22,7 +22,7 @@ const { items } = Astro.props;
                 items.map((item) => (
                     <div class="faq-item rounded-lg inset-shadow-2xs inset-shadow-foreground/20">
                         <button class="faq-question w-full flex justify-between items-center p-2 bg-background/20 cursor-pointer text-left font-xl text-foreground/80 hover:bg-background/30 transition-colors duration-200">
-                            <span>{item.question}</span>
+                            <p class="text-xl font-sans text-foreground/80">{item.question}</p>
                             <svg
                                 class="faq-icon w-6 h-6 text-foreground/80 transition-transform duration-300 ease-out"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -33,9 +33,13 @@ const { items } = Astro.props;
                             </svg>
                         </button>
                         <div class="faq-answer nset-shadow-2xs inset-shadow-foreground/20 max-h-0 overflow-hidden transition-all duration-200 ease-out bg-background/20">
-                            <p class="font-sans text-sm text-foreground/70 leading-relaxed mx-2">
-                                {item.answer}
-                            </p>
+                            <ul class="faq-answer-list list-none ml-6 flex flex-col gap-2 p-4">
+                                {
+                                    item.answers.map((answer) => (
+                                        <li class="text-foreground/80 text-lg">{answer}</li>
+                                    ))
+                                }
+                            </ul>
                         </div>
                     </div>
                 ))
