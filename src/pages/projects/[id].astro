@@ -29,9 +29,9 @@ const { project } = Astro.props;
 ---
 
 <Layout
-    title={'hello'}
-    description={'hello'}
-    keywords={['hello']}
+    title={project?.title}
+    description={project?.description}
+    keywords={project?.tags}
     type="website"
 >
     <Container>

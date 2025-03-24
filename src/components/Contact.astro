@@ -1,6 +1,4 @@
 ---
-
-
 import SectionContainer from "./projects/SectionContainer.astro";
 import SectionTitle from "./ui/SectionTitle.astro";
 import Divisor from "./ui/Divisor.astro";
@@ -13,30 +11,17 @@ import ContactInfo from "./contact/ContactInfo.astro";
         <SectionContainer>
             <SectionTitle title="Contacto" showLink={false} />
             <Divisor space="xs" />
-            <div class="flex flex-col md:flex-row items-stretch justify-between md:items-center gap-8 md:gap-12 my-6 w-full max-w-6xl ">
-                <div class="w-full md:flex-1">
-                    <Form/>
+            <div
+                class="flex flex-col w-full md:flex-row justify-between md:items-center gap-8 md:gap-12 "
+            >
+                <div class="w-full md:flex-1 ">
+                    <Form />
                 </div>
-                <div class="w-full md:flex-1">
-                    <ContactInfo/>
+                <div class="w-full flex-1 h-full" >
+                    <ContactInfo />
                 </div>
+
             </div>
         </SectionContainer>
     </div>
 </article>
-
-<script>
-    // function getFormData() {
-    //     document.querySelector("form")
-    //     .addEventListener("submit", (e) => {
-    //         e.preventDefault();
-    //         const form = e.target as HTMLFormElement;
-    //         const data = Object.fromEntries(new FormData(form));
-    //         alert(JSON.stringify(data, null, 2))
-    //     })
-    // }
-
-    // document.addEventListener("astro:page-load", () => {
-    //     getFormData();
-    // });
-</script>

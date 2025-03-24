@@ -16,12 +16,14 @@ interface Props {
 const { id, title, description, image } = Astro.props;
 ---
 
-<div class="project-card mt-4">
+<div class="project-card mt-4 w-full">
     <!-- @ts-ignore -->
-    <Link href={`/projects/${id}`}>
-        <Image  id={id} image={image}/>
+    <Link href={`/projects/${id}`} class="w-full h-52 md:h-96">
+            <Image id={id} image={image} class="w-full h-full flex-1 object-cover" />
     </Link>
-    <div class="project-info-redirect flex justify-start items-center gap-4 h-max">
+    <div
+        class="project-info-redirect flex justify-start items-center gap-4 h-max"
+    >
         <Link href={`/projects/${id}`}>
             <Button
                 icon="icon-arrow-up-right"
@@ -31,7 +33,7 @@ const { id, title, description, image } = Astro.props;
             />
         </Link>
         <div class="project-info flex-1 w-50 md:w-80 h-12">
-            <h3 class="font-display font-thing text-foreground text-xl ">
+            <h3 class="font-display font-thing text-foreground text-xl">
                 {title}
             </h3>
             <p

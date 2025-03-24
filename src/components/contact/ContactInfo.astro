@@ -3,9 +3,14 @@ import { Icon } from "astro-icon/components";
 import ContactElement from "@/components/contact/ContactElement.astro";
 ---
 
-<div class="w-96 h-max font-display px-2 md:flex md:flex-row md:justify-between">
-    <div>
-        <div class="title">Contactanos y obten una asesoria gratis</div>
+<div
+    class="w-96 h-full font-display flex-1 px-2 md:flex md:flex-row md:justify-between md:w-full md:h-92 pt-9 gap-8"
+>
+    <section class="flex-1">
+        <div class="title">
+            <span>Contactanos!!</span>
+            <p>Y obten una asesoria gratis</p>
+        </div>
         <div
             class="socials flex gap-2 [&>div]:bg-foreground/10 [&>div]:text-foreground [&>div]:p-2 [&>div]:rounded-lg mt-2"
         >
@@ -19,10 +24,10 @@ import ContactElement from "@/components/contact/ContactElement.astro";
                 <Icon name="icon-x" />
             </div>
         </div>
-    </div>
+    </section>
 
-    <div>
-        <div class="contact-info mt-4">
+    <section class="flex-1">
+        <div class="contact-info">
             <p>Informacion de contacto</p>
         </div>
 
@@ -43,5 +48,5 @@ import ContactElement from "@/components/contact/ContactElement.astro";
             title="Location"
             detail="2005 Naguanagua, Manantial"
         />
-    </div>
+    </section>
 </div>
