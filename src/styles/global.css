@@ -3,8 +3,12 @@
 
 .dark {
     /* Estilos para modo oscuro */
-    --color-background: #030814;
-    --color-foreground: #fff;
+    /* --color-background: #030814; */
+    /* --color-foreground: #fff; */
+}
+
+.backdrop-blur-xl {
+    transform: translate3d(0, 0, 0);
 }
 
 @theme {
@@ -12,8 +16,8 @@
     --font-display: "Montserrat Variable", sans-serif;
     --font-mono: "Space Mono", monospace;
 
-    --color-background: #fff;
-    --color-foreground: #000;
+    --color-background: #030814;
+    --color-foreground: #ffffff;
 
     --color-pomp-and-power: hsla(274, 21%, 46%, 1);
     --color-pale-dogwood: hsla(358, 39%, 85%, 1);
@@ -24,6 +28,7 @@
 html {
     scroll-behavior: smooth;
 }
+
 body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -67,7 +72,7 @@ animation and trasnsition
 }
 
 #toggleMenu.open span:first-child {
-    background-color: white ;
+    background-color: white;
     transform: rotate(-45deg);
     transform-origin: right;
 }
@@ -77,7 +82,7 @@ animation and trasnsition
 }
 
 #toggleMenu.open span:last-child {
-    background-color: white ;
+    background-color: white;
     transform: rotate(45deg);
     transform-origin: right;
 }
@@ -145,10 +150,10 @@ animation and trasnsition
 /* Estilos para view transitions */
 ::view-transition-old(project-image-*),
 ::view-transition-new(project-image-*) {
-  border-radius: 1rem; /* 16px, equivale a rounded-2xl */
-  overflow: hidden;
+    border-radius: 1rem; /* 16px, equivale a rounded-2xl */
+    overflow: hidden;
 }
 
 ::view-transition-image-pair(project-image-*) {
-  isolation: auto;
+    isolation: auto;
 }

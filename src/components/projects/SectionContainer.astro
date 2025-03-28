@@ -1,8 +1,17 @@
 ---
-const { class: className, border } = Astro.props;
+const { class: className, border } = Astro.props as {
+    class: string;
+    border: "border" | "noBorder";
+};
+
+const borderType = {
+    border: "bg-background border-[1px] border-foreground/20",
+    noBorder: "bg-transparent border-none"
+};
+
+const borderClass = borderType[border] || borderType.border;
 ---
 
-
-<div class={`container ${border ? 'bg-background' : 'bg-transparent border-none'} ${border ? 'border-[1px] border-foreground/20' : ''} rounded-lg p-4 ${className}`}>
-    <slot/>
+<div class={`container  rounded-lg p-4 ${borderClass} ${className}`}>
+    <slot />
 </div>
